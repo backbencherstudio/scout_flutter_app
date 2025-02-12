@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
 import 'package:scout_app/view/Login_Screen/inputDecoration.dart';
 import 'package:scout_app/view/Login_Screen/signUPTellUS.dart';
-import 'package:scout_app/view/profile_setting_ui/widgets/styles.dart';
 
 class Signup extends StatefulWidget {
   Signup({
