@@ -11,14 +11,13 @@ class ProfileSettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:  customAppBar(context, "Account Settings"),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: ListView(
             children: [
-              CustomAppBar(
-                title: "Account Settings",
-              ),
+
               SizedBox(
                 height: 32.h,
               ),
@@ -107,7 +106,7 @@ class ProfileSettingScreen extends StatelessWidget {
               },),
               SizedBox(height: 4.h,),
               CustomInfoContainer(imagePath: "assets/icons/star.png",title: "My Interests",onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_)=> const MyInterestScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>  MyInterestScreen()));
               },),
               SizedBox(height: 4.h,),
               CustomInfoContainer(imagePath: "assets/icons/share.png",title: "Social Links",onTap: (){},),
