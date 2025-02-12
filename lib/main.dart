@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
 
@@ -109,14 +110,14 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+              initialRoute: RouteName.profileSettingScreen,
               routes: {
-                '/': (context) => SplashScreen(),
-                RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.profileScreen : (context) => ProfileScreen(),
+                //'/': (context) => SplashScreen(),
+                //RouteName.homeScreen : (context) => HomeScreen(),
+                //RouteName.profileScreen : (context) => ProfileScreen(),
                 RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                RouteName.loginScreen : (context) => LoginScreen(),
-                RouteName.signUpScreen : (context) => SignUpScreen(),
+                //RouteName.loginScreen : (context) => LoginScreen(),
+                //RouteName.signUpScreen : (context) => SignUpScreen(),
               }
             // home: HomeScreen(),
           );
