@@ -37,7 +37,7 @@ dependencies:
   provider: ^6.1.2
   flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
-
+  dotted_border: ^2.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,7 +64,11 @@ flutter:
   assets:
     - assets/splash/
     - assets/images/event/
+<<<<<<< HEAD
     - assets/images/
+=======
+    - assets/icons/
+>>>>>>> f68d443b73cddc799a22aff0b4f7e9c848cb58bb
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
