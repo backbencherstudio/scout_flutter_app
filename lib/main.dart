@@ -134,13 +134,14 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.homeScreen,
+              initialRoute: RouteName.profileSettingScreen,
               routes: {
 
                  //'/': (context) => SplashScreen(),
                 //RouteName.loginScreen : (context) => LoginScreen(),
                 RouteName.homeScreen : (context) => HomeScreen(),
                 RouteName.eventDetailsScreen : (context) => EventDetailsScreen(),
+                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
 
               });
         },
