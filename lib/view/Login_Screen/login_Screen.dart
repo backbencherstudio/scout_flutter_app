@@ -15,23 +15,26 @@ class LoginScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 140,
-            ),
-            Center(
-              child: Image.asset(
-                "assets/login/primlogo.png",
-                width: 138.w,
-                height: 36.h,
+        child: Padding(
+          padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 140,
               ),
-            ),
-            SizedBox(
-              height: 327,
-            ),
-            Center(child: Glassbox()),
-          ],
+              Center(
+                child: Image.asset(
+                  "assets/login/primelogo.png",
+                  width: 138.w,
+                  height: 36.h,
+                ),
+              ),
+              SizedBox(
+                height: 295,
+              ),
+              Expanded(child: Glassbox()),
+            ],
+          ),
         ),
       ),
     );

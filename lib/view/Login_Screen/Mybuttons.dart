@@ -37,11 +37,12 @@ class Mybuttons extends StatelessWidget {
         ),
         child: Center(
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Image.asset(
-              img!,
-              height: 24.h,
-              width: 24.w,
-            ),
+            if (img != null)
+              Image.asset(
+                img!,
+                height: 24.h,
+                width: 24.w,
+              ),
             Text(
               text,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(

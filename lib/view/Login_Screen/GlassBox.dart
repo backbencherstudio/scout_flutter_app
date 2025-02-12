@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/main.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
+import 'package:scout_app/view/Login_Screen/signUP.dart';
 
 class Glassbox extends StatelessWidget {
   const Glassbox({super.key});
@@ -12,8 +13,6 @@ class Glassbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       child: Container(
-        width: 359,
-        height: 333,
         child: Stack(
           children: [
             //blurr effects
@@ -40,69 +39,93 @@ class Glassbox extends StatelessWidget {
 
             //bhitorer jinishpatti
             Padding(
-              padding: EdgeInsets.only(left: 16, right: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 32.h,
-                  ),
-                  //---------------------------------welcome to scout---------------------------------
-                  Center(
-                      child: Text(
-                    "Welcome to Scout",
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w600,
-                        ),
-                  )),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  //-----------------------------------discover text-----------------------------
-                  Center(
-                      child: Text(
-                    "Discover and share the best local events",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
-                        ),
-                  )),
-                  Center(
-                      child: Text(
-                    "with your friends.",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
-                        ),
-                  )),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  //-----------------------login buttons-------------------------------------------------------
-                  Mybuttons(
-                    ontap: () {},
-                    text: " Continue with Google",
-                    color: Color(0xFFFFFFFF),
-                    fontColor: Color(0xFF000000),
-                    fontWeight: FontWeight.w600,
-                    img: "assets/login/google.png",
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  Center(
-                      child: Text(
-                    "or",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Color(0xFFFFFFFF),
-                          fontWeight: FontWeight.w400,
-                        ),
-                  )),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                ],
+              padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(
+                      height: 32.h,
+                    ),
+                    //---------------------------------welcome to scout---------------------------------
+                    Center(
+                        child: Text(
+                      "Welcome to Scout",
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: Color(0xFFFFFFFF),
+                            fontWeight: FontWeight.w600,
+                          ),
+                    )),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    //-----------------------------------discover text-----------------------------
+                    Center(
+                        child: Text(
+                      "Discover and share the best local events",
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Color(0xFFFFFFFF),
+                            fontWeight: FontWeight.w400,
+                          ),
+                    )),
+                    Center(
+                        child: Text(
+                      "with your friends.",
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Color(0xFFFFFFFF),
+                            fontWeight: FontWeight.w400,
+                          ),
+                    )),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    //-----------------------login buttons-------------------------------------------------------
+                    Mybuttons(
+                      ontap: () {},
+                      text: " Continue with Google",
+                      color: Color(0xFFFFFFFF),
+                      fontColor: Color(0xFF000000),
+                      fontWeight: FontWeight.w600,
+                      img: "assets/login/google.png",
+                    ),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    Center(
+                        child: Text(
+                      "or",
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Color(0xFFFFFFFF),
+                            fontWeight: FontWeight.w400,
+                          ),
+                    )),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+
+                    Mybuttons(
+                      ontap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Signup()));
+                      },
+                      text: "Register",
+                      color: Color(0xFFFB6012),
+                      fontColor: Color(0xFFFFFFFF),
+                      fontWeight: FontWeight.w600,
+                    ),
+
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Mybuttons(
+                        ontap: () {},
+                        text: "Sign in",
+                        color: Color(0xFFFFF5F0),
+                        fontColor: Color(0xFF000000),
+                        fontWeight: FontWeight.w500),
+                  ],
+                ),
               ),
             ),
           ],

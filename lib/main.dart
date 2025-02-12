@@ -119,7 +119,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.homeScreen,
+              initialRoute: RouteName.eventCreateScreen,
               routes: {
                 '/': (context) => SplashScreen(),
                 // RouteName.homeScreen : (context) => HomeScreen(),
