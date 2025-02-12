@@ -7,18 +7,15 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
-      appBar: AppBar(
-        title: Text(
-          'Login Screen',
-        ),
-        centerTitle: true,
-      ),
       body: Stack(
         children: [
-          Column(
-            children: [
-              Image.asset("assets/login/loginLand.png"),
-            ],
+          Container(
+            child: Image.asset(
+              "assets/login/loginpic.png",
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              fit: BoxFit.cover,
+            ),
           )
         ],
       ),
