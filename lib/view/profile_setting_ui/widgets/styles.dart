@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 InputDecoration textFieldDecoration(
     BuildContext context, String label, Widget? suffixIcon) {
   return InputDecoration(
+    alignLabelWithHint: true,
     labelText: label,
-    labelStyle: Theme.of(context)
-        .textTheme
-        .bodySmall!
-        .copyWith(color: Color(0xFF4B5155)),
+    labelStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
+          color: Color(0xFF4B5155),
+        ),
     floatingLabelStyle: Theme.of(context)
         .textTheme
         .bodySmall!
@@ -22,6 +22,10 @@ InputDecoration textFieldDecoration(
     errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4.r),
         borderSide: BorderSide(color: Color(0xFF9BA2A7))),
-    suffixIcon: suffixIcon,
+    suffixIcon: Padding(
+      padding: EdgeInsets.only(right: 8.0),
+      child: suffixIcon,
+    ),
+    suffixIconConstraints: BoxConstraints(maxWidth: 32, maxHeight: 32),
   );
 }

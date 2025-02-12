@@ -6,4 +6,5 @@ class RouteName{
   static const String profileSettingScreen = "/profileSettingScreen";
   static const String signUpScreen = "/signUpScreen";
   static const String eventCreateScreen = "/eventCreateScreen";
+
 }
