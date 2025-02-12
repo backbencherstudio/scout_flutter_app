@@ -1,14 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+
+import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
+import 'package:scout_app/view_model/event_details_Screen_provider.dart';
+import 'package:scout_app/view/Login_Screen/login_Screen.dart';
+import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
+import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
-
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +23,9 @@ void main() async {
   // Ensure ScreenUtil is ready
   // await ScreenUtil.ensureScreenSize();
 
-  runApp(MyApp(),);
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,8 +39,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<HomeScreenProvider>(
-            create: (_) => HomeScreenProvider(),
+          create: (_) => HomeScreenProvider(),
         ),
+
+        ChangeNotifierProvider<EventDetailsScreenProvider>(
+          create: (_) => EventDetailsScreenProvider(),
+        ),
+
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -65,14 +77,17 @@ class MyApp extends StatelessWidget {
                 ),
 
                 appBarTheme: AppBarTheme(
+                    surfaceTintColor: Colors.transparent,
+
                   backgroundColor: Colors.white,
                   elevation: 0,
                   titleTextStyle: GoogleFonts.poppins(
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: Colors.black,
                   )
                 ),
+
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
                 textTheme: TextTheme(
                   headlineLarge: GoogleFonts.poppins(
@@ -99,7 +114,7 @@ class MyApp extends StatelessWidget {
                   bodyLarge: GoogleFonts.poppins(
                     fontSize: 16.sp,
                     //height: 22.h,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     color: Colors.black,
                   ),
                   bodyMedium: GoogleFonts.poppins(
@@ -121,15 +136,13 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: RouteName.homeScreen,
               routes: {
-                '/': (context) => SplashScreen(),
+
+                 //'/': (context) => SplashScreen(),
+                //RouteName.loginScreen : (context) => LoginScreen(),
                 RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.profileScreen : (context) => ProfileScreen(),
-                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                RouteName.loginScreen : (context) => LoginScreen(),
-                RouteName.signUpScreen : (context) => SignUpScreen(),
-              }
-            // home: HomeScreen(),
-          );
+                RouteName.eventDetailsScreen : (context) => EventDetailsScreen(),
+
+              });
         },
       ),
     );
