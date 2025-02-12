@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
 import 'package:scout_app/view/Login_Screen/inputDecoration.dart';
 import 'package:scout_app/view/Login_Screen/signUPTellUS.dart';
@@ -79,8 +80,7 @@ class _SignupState extends State<Signup> {
             ),
             Mybuttons(
                 ontap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUp2()));
+                  Navigator.pushNamed(context, RouteName.SignUp2);
                 },
                 text: "Create account",
                 color: Color(0xFFFB6012),

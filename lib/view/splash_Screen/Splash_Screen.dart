@@ -14,8 +14,8 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(Duration(seconds: 3), () {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    Future.delayed(Duration(milliseconds: 500), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
