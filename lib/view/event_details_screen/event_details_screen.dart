@@ -49,7 +49,7 @@ class EventDetailsScreen extends StatelessWidget{
          // SizedBox(width: 5.w,),
           GestureDetector(
             onTap: (){debugPrint("\nShare button pressed.\n");},
-            child: Image.asset("assets/images/share.png",
+            child: Image.asset("assets/icons/share.png",
             width: 24.w,
             height: 24.h,
             fit: BoxFit.cover,

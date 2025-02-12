@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/view/profile_setting_ui/my_details_screen.dart';
-import 'package:scout_app/view/profile_setting_ui/widgets/custom_app_bar.dart';
+import 'package:scout_app/utils/custom_app_bar.dart';
+import 'package:scout_app/view/profile_setting_ui/my_interest_screen.dart';
 import 'package:scout_app/view/profile_setting_ui/widgets/custom_info_container.dart';
 
 class ProfileSettingScreen extends StatelessWidget {
@@ -78,7 +79,7 @@ class ProfileSettingScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     ImageIcon(
-                      AssetImage("assets/images/msg.png"),
+                      AssetImage("assets/icons/msg.png"),
                       size: 24,
                     ),
                     SizedBox(width: 12.w,),
@@ -101,31 +102,33 @@ class ProfileSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/images/details.png",title: "My Details",onTap: (){
+              CustomInfoContainer(imagePath: "assets/icons/details.png",title: "My Details",onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (_)=> const MyDetailsScreen()));
               },),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/images/star.png",title: "My Interests",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/star.png",title: "My Interests",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> const MyInterestScreen()));
+              },),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/images/share.png",title: "Social Links",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/share.png",title: "Social Links",onTap: (){},),
               SizedBox(height: 24.h,),
               Text("Preferences",style: Theme.of(context).textTheme.bodyMedium,),
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/images/privacy.png",title: "Account Privacy",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/privacy.png",title: "Account Privacy",onTap: (){},),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/images/notification.png",title: "Notifications",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/notification.png",title: "Notifications",onTap: (){},),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/images/theme.png",title: "Theme",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/theme.png",title: "Theme",onTap: (){},),
               SizedBox(height: 24.h,),
               Text("Security",style: Theme.of(context).textTheme.bodyMedium,),
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/images/password.png",title: "Update Password",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/password.png",title: "Update Password",onTap: (){},),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/images/signout.png",title: "Sign Out",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/signout.png",title: "Sign Out",onTap: (){},),
               SizedBox(height:16.h,),
             ],
           ),

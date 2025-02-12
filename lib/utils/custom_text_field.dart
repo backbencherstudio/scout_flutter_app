@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
   final VoidCallback onTap;
   final int? width;
   final String? suffix;
+  final int? maxLine;
 
   const CustomTextField({
     super.key,
@@ -15,6 +16,7 @@ class CustomTextField extends StatelessWidget {
     required this.onTap,
     this.width,
     this.suffix,
+    this.maxLine
   });
 
   @override
@@ -30,13 +32,17 @@ class CustomTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(4.r),
             ),
             child: TextFormField(
+              maxLines: maxLine,
               decoration: InputDecoration(
                  // hintText: hintText,
                   label: Text(label!),
                   filled: true,
+
                   fillColor: Colors.transparent,
-                  hintStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Color(0xff4B5155),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15.sp
                       ),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4.r),
