@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
-import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
+import 'package:scout_app/view/Login_Screen/SignUpShareIntrest.dart';
+import 'package:scout_app/view/Login_Screen/signUP.dart';
+import 'package:scout_app/view/Login_Screen/signUPTellUS.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
@@ -42,12 +44,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<HomeScreenProvider>(
           create: (_) => HomeScreenProvider(),
         ),
-
         ChangeNotifierProvider<EventDetailsScreenProvider>(
           create: (_) => EventDetailsScreenProvider(),
         ),
-
-
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -79,15 +78,13 @@ class MyApp extends StatelessWidget {
 
                 appBarTheme: AppBarTheme(
                     surfaceTintColor: Colors.transparent,
-
-                  backgroundColor: Colors.white,
-                  elevation: 0,
-                  titleTextStyle: GoogleFonts.poppins(
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  )
-                ),
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    titleTextStyle: GoogleFonts.poppins(
+                      fontSize: 28.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    )),
 
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
                 textTheme: TextTheme(
@@ -135,15 +132,15 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.eventCreateScreen,
+              initialRoute: '/',
               routes: {
-
-                 //'/': (context) => SplashScreen(),
-                //RouteName.loginScreen : (context) => LoginScreen(),
-                RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.eventDetailsScreen : (context) => EventDetailsScreen(),
-                RouteName.eventCreateScreen : (context) => EventCreateScreen(),
-
+                '/': (context) => SplashScreen(),
+                RouteName.loginScreen: (context) => LoginScreen(),
+                RouteName.Signup: (context) => Signup(),
+                RouteName.SignUp2: (context) => SignUp2(),
+                RouteName.SignUp3: (context) => SignUp3(),
+                RouteName.homeScreen: (context) => HomeScreen(),
+                RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
               });
         },
       ),
