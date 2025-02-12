@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class Mybuttons extends StatelessWidget {
   final VoidCallback ontap;
   final String text;
