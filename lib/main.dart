@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+
+import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
+import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
+import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/Login_Screen/login_Screen.dart';
 import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
@@ -36,6 +41,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<HomeScreenProvider>(
           create: (_) => HomeScreenProvider(),
         ),
+
+        ChangeNotifierProvider<EventDetailsScreenProvider>(
+          create: (_) => EventDetailsScreenProvider(),
+        ),
+
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -67,13 +78,16 @@ class MyApp extends StatelessWidget {
 
                 appBarTheme: AppBarTheme(
                     surfaceTintColor: Colors.transparent,
-                    backgroundColor: Colors.white,
-                    elevation: 0,
-                    titleTextStyle: GoogleFonts.poppins(
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    )),
+
+                  backgroundColor: Colors.white,
+                  elevation: 0,
+                  titleTextStyle: GoogleFonts.poppins(
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  )
+                ),
+
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
                 textTheme: TextTheme(
                   headlineLarge: GoogleFonts.poppins(
@@ -120,14 +134,14 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute:  RouteName.profileSettingScreen,
+              initialRoute: RouteName.homeScreen,
               routes: {
-                // '/': (context) => SplashScreen(),
-                // RouteName.loginScreen: (context) => LoginScreen(),
-                //RouteName.homeScreen : (context) => HomeScreen(),
-                // RouteName.profileScreen : (context) => ProfileScreen(),
-                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                // RouteName.signUpScreen : (context) => SignUpScreen(),
+
+                 //'/': (context) => SplashScreen(),
+                //RouteName.loginScreen : (context) => LoginScreen(),
+                RouteName.homeScreen : (context) => HomeScreen(),
+                RouteName.eventDetailsScreen : (context) => EventDetailsScreen(),
+
               });
         },
       ),

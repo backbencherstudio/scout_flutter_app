@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
+import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/home_screen/widgets/tab_bar_design.dart';
+import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -59,8 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: false,
-
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -139,15 +139,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(4.r),
-                                  ),
-                                  child: Image.asset(
-                                    event?.imagePath ?? "",
-                                    width: 359.w,
-                                    height: 340.h,
-                                    // fit: BoxFit.cover,
+                                GestureDetector(
+                                  onTap:(){
+                                    debugPrint("\nEvent image button pressed.\n");
+                                    context.read<EventDetailsScreenProvider>().setEventDetails(event);
+                                    Navigator.pushNamed(context, RouteName.eventDetailsScreen);
+                                  },
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4.r),
+                                    ),
+                                    child: Image.asset(
+                                      event?.imagePath ?? "",
+                                      width: 359.w,
+                                      height: 340.h,
+                                      // fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -195,29 +202,67 @@ class _HomeScreenState extends State<HomeScreen> {
                                 SizedBox(
                                   height: 16.h,
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    event.eventTitle!,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge
-                                        ?.copyWith(
-                                          fontSize: 20.sp,
-                                        ),
+                                GestureDetector(
+                                  onTap : (){
+                                    debugPrint("\nEvent title pressed\n");
+                                    context.read<EventDetailsScreenProvider>().setEventDetails(event);
+                                    Navigator.pushNamed(context, RouteName.eventDetailsScreen);
+                                  },
+                                  child: Padding(
+                                    padding: EdgeInsets.only(left: 8.w),
+                                    child: Text(
+                                      event.eventTitle!,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge
+                                          ?.copyWith(
+                                            fontSize: 20.sp,
+                                          ),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
                                   height: 16.h,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    "${event.interestedPeople!.length} friends are interested",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(color: Color(0xff25282A),fontWeight: FontWeight.w400),
+                                  padding: EdgeInsets.only(left: 8.w),
+                                  child: Row(
+                                    crossAxisAlignment : CrossAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 48.w,
+                                        height: 30.h,
+                                        child: Stack(
+                                          clipBehavior: Clip.none,
+                                          children: [
+                                            Positioned(
+                                               left : 0,
+                                                child: ClipOval(child: Image.asset('assets/images/event/female.png',
+                                                width: 30.w,
+                                                height: 30.h,
+                                                fit: BoxFit.cover,),),
+                                            ),
+                                            Positioned(
+                                              left : 18,
+                                              child: ClipOval(child: Image.asset('assets/images/event/male.png',
+                                                width: 30.w,
+                                                height: 30.h,
+                                                fit: BoxFit.cover,),),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(width: 8.w,),
+                                      Expanded(
+                                        child: Text(
+                                          "${event.interestedPeople!.length} friends are interested",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium
+                                              ?.copyWith(color: Color(0xff25282A),fontWeight: FontWeight.w400),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 SizedBox(
@@ -225,15 +270,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 8.0),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      debugPrint(
-                                          "\nI'm interested button pressed.\n");
-                                    },
-                                    child: Row(
-                                    //  spacing : 12.w,
-                                      children: [
-                                        Expanded(
+                                  child: Row(
+                                  //  spacing : 12.w,
+                                    children: [
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap:(){debugPrint("\nI'm interested button pressed\n");},
                                           child: Container(
                                           //  width: double.infinity,
                                             padding: EdgeInsets.symmetric(
@@ -252,17 +294,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ),
                                         ),
-                                        Container(
-                                          margin: EdgeInsets.symmetric(horizontal: 12.w),
-                                          child: IconButton(
-                                            onPressed :(){debugPrint("\nBookmark icon button pressed!\n");},
-                                            icon : Icon(Icons.bookmark_border_outlined, size: 24,),
-                                            color: Color(0xff111315),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.symmetric(horizontal: 12.w),
+                                        child: IconButton(
+                                          onPressed :(){debugPrint("\nBookmark icon button pressed!\n");},
+                                          icon : Icon(Icons.bookmark_border_outlined, size: 24,),
+                                          color: Color(0xff111315),
 
-                                          ),
-                                        )
-                                      ],
-                                    ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ),
                                 SizedBox(
@@ -277,7 +319,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   );
                 },
-              )
+              ),
+              SizedBox(height: 100,),
             ],
           ),
         ),
