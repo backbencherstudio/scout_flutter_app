@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/view/event_create_screen/widget/age_restrictions.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_activities.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_extras_screen.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_tags_widget.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_visibility_screen.dart';
 
 import '../../../utils/custom_dotted_border_input_field.dart';
 import '../../../utils/custom_text_field.dart';
@@ -94,15 +99,31 @@ class EventCreateScreen extends StatelessWidget {
             EventInfoContainer(
               imagePath: '',
               title: 'Tags',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EventTagsScreen(), // Remove curly braces
+                  ),
+                );
+
+              },
             ),
             SizedBox(
               height: 16.h,
             ),
+
             EventInfoContainer(
               imagePath: '',
               title: 'Event activities',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EventActivities(), // Remove curly braces
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: 16.h,
@@ -110,7 +131,14 @@ class EventCreateScreen extends StatelessWidget {
             EventInfoContainer(
               imagePath: '',
               title: 'Age restrictions',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AgeRestrictions(), // Remove curly braces
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: 16.h,
@@ -118,7 +146,15 @@ class EventCreateScreen extends StatelessWidget {
             EventInfoContainer(
               imagePath: '',
               title: 'Extras',
-              onTap: () {},
+              onTap: () {
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EventExtrasScreen(), // Remove curly braces
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: 16.h,
@@ -126,7 +162,14 @@ class EventCreateScreen extends StatelessWidget {
             EventInfoContainer(
               imagePath: '',
               title: 'Event visibility',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EventVisibilityScreen(), // Remove curly braces
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: 48.h,
