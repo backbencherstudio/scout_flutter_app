@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
                   titleTextStyle: GoogleFonts.poppins(
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: Colors.black,
                   )
                 ),
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
@@ -121,12 +121,12 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: RouteName.homeScreen,
               routes: {
-                '/': (context) => SplashScreen(),
+               // '/': (context) => SplashScreen(),
                 RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.profileScreen : (context) => ProfileScreen(),
-                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                RouteName.loginScreen : (context) => LoginScreen(),
-                RouteName.signUpScreen : (context) => SignUpScreen(),
+               // RouteName.profileScreen : (context) => ProfileScreen(),
+               // RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
+               // RouteName.loginScreen : (context) => LoginScreen(),
+              //  RouteName.signUpScreen : (context) => SignUpScreen(),
               }
             // home: HomeScreen(),
           );
