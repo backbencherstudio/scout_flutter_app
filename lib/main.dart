@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/login_Screen.dart';
-import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
@@ -66,12 +66,13 @@ class MyApp extends StatelessWidget {
                 ),
 
                 appBarTheme: AppBarTheme(
+                    surfaceTintColor: Colors.transparent,
                     backgroundColor: Colors.white,
                     elevation: 0,
                     titleTextStyle: GoogleFonts.poppins(
                       fontSize: 28.sp,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: Colors.white,
                     )),
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
                 textTheme: TextTheme(
@@ -99,7 +100,7 @@ class MyApp extends StatelessWidget {
                   bodyLarge: GoogleFonts.poppins(
                     fontSize: 16.sp,
                     //height: 22.h,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     color: Colors.black,
                   ),
                   bodyMedium: GoogleFonts.poppins(
@@ -119,17 +120,15 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.eventCreateScreen,
+              initialRoute: '/',
               routes: {
                 '/': (context) => SplashScreen(),
-                // RouteName.homeScreen : (context) => HomeScreen(),
+                RouteName.loginScreen: (context) => LoginScreen(),
+                //RouteName.homeScreen : (context) => HomeScreen(),
                 // RouteName.profileScreen : (context) => ProfileScreen(),
                 // RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                RouteName.loginScreen: (context) => LoginScreen(),
-                //  RouteName.signUpScreen : (context) => SignUpScreen(),
-              }
-              // home: HomeScreen(),
-              );
+                // RouteName.signUpScreen : (context) => SignUpScreen(),
+              });
         },
       ),
     );
