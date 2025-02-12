@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
@@ -119,14 +120,18 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.homeScreen,
+              // initialRoute: RouteName.homeScreen,
+              initialRoute: RouteName.eventCreateScreen,
+
               routes: {
-                '/': (context) => SplashScreen(),
-                RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.profileScreen : (context) => ProfileScreen(),
-                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                RouteName.loginScreen : (context) => LoginScreen(),
-                RouteName.signUpScreen : (context) => SignUpScreen(),
+                // '/': (context) => SplashScreen(),
+                // RouteName.homeScreen : (context) => HomeScreen(),
+                // RouteName.profileScreen : (context) => ProfileScreen(),
+                // RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
+                // RouteName.loginScreen : (context) => LoginScreen(),
+                // RouteName.signUpScreen : (context) => SignUpScreen(),
+                RouteName.eventCreateScreen : (context) => EventCreateScreen(),
+
               }
             // home: HomeScreen(),
           );
