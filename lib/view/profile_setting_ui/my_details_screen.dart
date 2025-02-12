@@ -11,12 +11,12 @@ class MyDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(context, "My Details"),
       body: SafeArea(
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 24.w),
           child: Column(
             children: [
-              CustomAppBar(title: "My Details"),
               SizedBox(height: 32.h,),
               TextFormField(
                 decoration: textFieldDecoration(context, "Full Name", null)
