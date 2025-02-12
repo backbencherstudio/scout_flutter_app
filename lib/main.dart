@@ -68,6 +68,15 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
 
+                appBarTheme: AppBarTheme(
+                  backgroundColor: Colors.white,
+                  elevation: 0,
+                  titleTextStyle: GoogleFonts.poppins(
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  )
+                ),
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
                 textTheme: TextTheme(
                   headlineLarge: GoogleFonts.poppins(
