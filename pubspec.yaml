@@ -64,11 +64,9 @@ flutter:
   assets:
     - assets/splash/
     - assets/images/event/
-<<<<<<< HEAD
     - assets/images/
-=======
     - assets/icons/
->>>>>>> f68d443b73cddc799a22aff0b4f7e9c848cb58bb
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
