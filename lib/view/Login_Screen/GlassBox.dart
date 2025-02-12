@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
 import 'package:scout_app/view/Login_Screen/signUP.dart';
 
@@ -105,8 +106,7 @@ class Glassbox extends StatelessWidget {
 
                     Mybuttons(
                       ontap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Signup()));
+                        Navigator.pushNamed(context, RouteName.Signup);
                       },
                       text: "Register",
                       color: Color(0xFFFB6012),
