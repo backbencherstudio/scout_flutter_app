@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
-import 'package:scout_app/view/event_create/screen/event_create_screen.dart';
+import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
+import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
-
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +19,9 @@ void main() async {
   // Ensure ScreenUtil is ready
   // await ScreenUtil.ensureScreenSize();
 
-  runApp(MyApp(),);
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -34,8 +35,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<HomeScreenProvider>(
-            create: (_) => HomeScreenProvider(),
+          create: (_) => HomeScreenProvider(),
         ),
+
+        ChangeNotifierProvider<EventDetailsScreenProvider>(
+          create: (_) => EventDetailsScreenProvider(),
+        ),
+
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -121,18 +128,18 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.eventCreateScreen,
+              initialRoute: RouteName.homeScreen,
               routes: {
-               // '/': (context) => SplashScreen(),
-               // RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.eventCreateScreen : (context) => EventCreateScreen(),
-               // RouteName.profileScreen : (context) => ProfileScreen(),
-               // RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-               // RouteName.loginScreen : (context) => LoginScreen(),
-              //  RouteName.signUpScreen : (context) => SignUpScreen(),
+
+                 //'/': (context) => SplashScreen(),
+                //RouteName.loginScreen : (context) => LoginScreen(),
+                RouteName.homeScreen : (context) => HomeScreen(),
+                RouteName.eventDetailsScreen : (context) => EventDetailsScreen(),
+                // RouteName.profileScreen : (context) => ProfileScreen(),
+                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
+                // RouteName.signUpScreen : (context) => SignUpScreen(),
               }
-            // home: HomeScreen(),
-          );
+              );
         },
       ),
     );

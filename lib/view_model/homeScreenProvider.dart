@@ -11,6 +11,7 @@ class HomeScreenProvider with ChangeNotifier{
   final Map<String, dynamic> _demoEvents = {
     "eventList": [
       {
+        "eventId": 1,
         "imagePath": "assets/images/event/event_01.png",
         "category": [
           "Nightlife",
@@ -24,14 +25,39 @@ class HomeScreenProvider with ChangeNotifier{
           "Wahab",
           "Bashar",
           "Shakin"
+        ],
+        "organisedBy": "Ultra South Africa",
+        "location": "Ostrich Ranch, Van Schoorsdrif Rd, Philipine",
+        "description": "Africa's largest electronic music festival, which is part of the Ultra Music Festival's worldwide expansion. The festival takes place in two cities, Johannesburg and Cape Town, and is strictly for those 18 and older. Having debuted in 2014, Ultra South Africa is the third longest-standing world edition of the festival.",
+        "activities": [
+          {
+            "artistName": "James",
+            "times": "12:00 - 13:00"
+          },
+          {
+            "artistName": "Ayub Bacchu",
+            "times": "13:00 - 14:00"
+          },
+          {
+            "artistName": "Singer Wahab",
+            "times": "14:00 - 15:00"
+          },
+          {
+            "artistName": "Singer Bashar",
+            "times": "15:00 - 16:00"
+          },
+          {
+            "artistName": "Singer Safrid",
+            "times": "16:00 - 17:00"
+          }
         ]
       },
       {
+        "eventId": 2,
         "imagePath": "assets/images/event/event_02.png",
         "category": [
           "Nightlife",
-          "Music",
-
+          "Music"
         ],
         "eventDate": "3 APRIL 2024, 12:00 - 00:00",
         "eventTitle": "Timo ODV - Live at Halo",
@@ -43,7 +69,32 @@ class HomeScreenProvider with ChangeNotifier{
           "Shakin",
           "Shakin",
           "Shakin",
-          "Shakin",
+          "Shakin"
+        ],
+        "organisedBy": "Ultra South Africa",
+        "location": "Ostrich Ranch, Van Schoorsdrif Rd, Philipine",
+        "description": "Africa's largest electronic music festival, which is part of the Ultra Music Festival's worldwide expansion. The festival takes place in two cities, Johannesburg and Cape Town, and is strictly for those 18 and older. Having debuted in 2014, Ultra South Africa is the third longest-standing world edition of the festival.",
+        "activities": [
+          {
+            "artistName": "James",
+            "times": "12:00 - 13:00"
+          },
+          {
+            "artistName": "Ayub Bacchu",
+            "times": "13:00 - 14:00"
+          },
+          {
+            "artistName": "Singer Wahab",
+            "times": "14:00 - 15:00"
+          },
+          {
+            "artistName": "Singer Bashar",
+            "times": "15:00 - 16:00"
+          },
+          {
+            "artistName": "Singer Safrid",
+            "times": "16:00 - 17:00"
+          }
         ]
       }
     ]
