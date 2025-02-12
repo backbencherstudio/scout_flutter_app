@@ -120,13 +120,13 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+              initialRoute:  RouteName.profileSettingScreen,
               routes: {
-                '/': (context) => SplashScreen(),
-                RouteName.loginScreen: (context) => LoginScreen(),
+                // '/': (context) => SplashScreen(),
+                // RouteName.loginScreen: (context) => LoginScreen(),
                 //RouteName.homeScreen : (context) => HomeScreen(),
                 // RouteName.profileScreen : (context) => ProfileScreen(),
-                // RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
+                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
                 // RouteName.signUpScreen : (context) => SignUpScreen(),
               });
         },

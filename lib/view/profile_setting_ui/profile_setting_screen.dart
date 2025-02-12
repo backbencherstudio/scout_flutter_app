@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/view/profile_setting_ui/my_details_screen.dart';
 import 'package:scout_app/utils/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_ui/my_interest_screen.dart';
+import 'package:scout_app/view/profile_setting_ui/social_link_screen.dart';
 import 'package:scout_app/view/profile_setting_ui/widgets/custom_info_container.dart';
 
 class ProfileSettingScreen extends StatelessWidget {
@@ -109,7 +110,9 @@ class ProfileSettingScreen extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (_)=>  MyInterestScreen()));
               },),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/icons/share.png",title: "Social Links",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/share.png",title: "Social Links",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> const SocialLinkScreen()));
+              },),
               SizedBox(height: 24.h,),
               Text("Preferences",style: Theme.of(context).textTheme.bodyMedium,),
               SizedBox(
