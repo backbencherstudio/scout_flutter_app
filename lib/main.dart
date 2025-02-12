@@ -5,7 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+
 import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
+
+import 'package:scout_app/view/home_screen/home_screen.dart';
+
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
 
@@ -66,44 +70,44 @@ class MyApp extends StatelessWidget {
 
                 //  setting-up textTheme globally according to figma and use screen_util feature for responsiveness
                 textTheme: TextTheme(
-                  headlineLarge: TextStyle(
+                  headlineLarge: GoogleFonts.poppins(
                     fontSize: 48.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
-                  headlineMedium: TextStyle(
+                  headlineMedium: GoogleFonts.poppins(
                     fontSize: 24.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
-                  headlineSmall: TextStyle(
+                  headlineSmall: GoogleFonts.poppins(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
-                  titleLarge: GoogleFonts.inter(
+                  titleLarge: GoogleFonts.poppins(
                     fontSize: 18.sp,
                     //height: 30.h,
                     fontWeight: FontWeight.normal,
                     color: Colors.black,
                   ),
-                  bodyLarge: GoogleFonts.inter(
+                  bodyLarge: GoogleFonts.poppins(
                     fontSize: 16.sp,
                     //height: 22.h,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
-                  bodyMedium: GoogleFonts.inter(
+                  bodyMedium: GoogleFonts.poppins(
                     fontSize: 14.sp,
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
                   ),
-                  bodySmall: GoogleFonts.inter(
+                  bodySmall: GoogleFonts.poppins(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
-                  labelLarge: TextStyle(
+                  labelLarge: GoogleFonts.poppins(
                       fontSize: 10.sp,
                       fontWeight: FontWeight.normal,
                       color: Colors.black),
