@@ -1,13 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+import 'package:scout_app/view/Login_Screen/login_Screen.dart';
+import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
-
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +17,9 @@ void main() async {
   // Ensure ScreenUtil is ready
   // await ScreenUtil.ensureScreenSize();
 
-  runApp(MyApp(),);
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<HomeScreenProvider>(
-            create: (_) => HomeScreenProvider(),
+          create: (_) => HomeScreenProvider(),
         ),
       ],
       child: ScreenUtilInit(
@@ -112,14 +113,14 @@ class MyApp extends StatelessWidget {
               initialRoute: '/',
               routes: {
                 '/': (context) => SplashScreen(),
-                RouteName.homeScreen : (context) => HomeScreen(),
-                RouteName.profileScreen : (context) => ProfileScreen(),
-                RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
-                RouteName.loginScreen : (context) => LoginScreen(),
-                RouteName.signUpScreen : (context) => SignUpScreen(),
+                // RouteName.homeScreen : (context) => HomeScreen(),
+                // RouteName.profileScreen : (context) => ProfileScreen(),
+                // RouteName.profileSettingScreen : (context) => ProfileSettingScreen(),
+                RouteName.loginScreen: (context) => LoginScreen(),
+                // RouteName.signUpScreen : (context) => SignUpScreen(),
               }
-            // home: HomeScreen(),
-          );
+              // home: HomeScreen(),
+              );
         },
       ),
     );
