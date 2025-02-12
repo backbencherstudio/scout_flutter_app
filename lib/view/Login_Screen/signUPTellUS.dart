@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
 import 'package:scout_app/view/Login_Screen/SignUpShareIntrest.dart';
 import 'package:scout_app/view/Login_Screen/inputDecoration.dart';
@@ -81,8 +82,7 @@ class _SignUp2State extends State<SignUp2> {
             ),
             Mybuttons(
                 ontap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUp3()));
+                  Navigator.pushNamed(context, RouteName.SignUp3);
                 },
                 text: "Next",
                 color: Color(0xFFFB6012),

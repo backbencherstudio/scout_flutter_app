@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/BoxOfCatagory.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
 import 'package:scout_app/view/Login_Screen/inputDecoration.dart';
+import 'package:scout_app/view/home_screen/home_screen.dart';
 
 class SignUp3 extends StatefulWidget {
   const SignUp3({super.key});
@@ -81,8 +83,11 @@ class _SignUp3State extends State<SignUp3> {
             ),
             Mybuttons(
                 ontap: () {
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => SignUp3()));
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '${RouteName.homeScreen}',
+                    (Route<dynamic> route) => false,
+                  );
                 },
                 text: "Done",
                 color: Color(0xFFFB6012),
@@ -92,10 +97,7 @@ class _SignUp3State extends State<SignUp3> {
               height: 8.h,
             ),
             Mybuttons(
-                ontap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUp3()));
-                },
+                ontap: () {},
                 text: "Skip",
                 color: Color.fromARGB(255, 221, 221, 221),
                 fontColor: Color(0xFF000000),
