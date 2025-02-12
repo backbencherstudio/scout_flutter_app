@@ -136,12 +136,10 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: RouteName.homeScreen,
               routes: {
-
-                 //'/': (context) => SplashScreen(),
-                //RouteName.loginScreen : (context) => LoginScreen(),
+                 '/': (context) => SplashScreen(),
+                RouteName.loginScreen : (context) => LoginScreen(),
                 RouteName.homeScreen : (context) => HomeScreen(),
                 RouteName.eventDetailsScreen : (context) => EventDetailsScreen(),
-
               });
         },
       ),
