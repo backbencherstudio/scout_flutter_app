@@ -19,7 +19,7 @@ class EventTagsScreen extends StatelessWidget {
             SizedBox(
               height: 48.h,
               child: CustomTextField(
-                hintText: "Search",
+                label: "Search",
                 onTap: () {},
                 suffix: Icons.search, // Fixed: Use an Icon widget
               ),

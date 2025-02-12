@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
@@ -16,7 +17,7 @@ class PrimaryButton extends StatelessWidget {
     this.color = const Color(0xffFB6012),
     this.textColor = Colors.white,
     this.borderRadius = 8.0,
-    this.padding = const EdgeInsets.symmetric(vertical: 12.0, horizontal: 20.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
     this.fontSize = 14.0,
   });
 
@@ -26,6 +27,7 @@ class PrimaryButton extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         padding: padding,
+        height: 48.h,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(borderRadius),
