@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/view/profile_setting_ui/my_details_screen.dart';
 import 'package:scout_app/view/profile_setting_ui/widgets/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_ui/widgets/custom_info_container.dart';
 
@@ -100,7 +101,9 @@ class ProfileSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/images/details.png",title: "My Details",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/images/details.png",title: "My Details",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> const MyDetailsScreen()));
+              },),
               SizedBox(height: 4.h,),
               CustomInfoContainer(imagePath: "assets/images/star.png",title: "My Interests",onTap: (){},),
               SizedBox(height: 4.h,),
