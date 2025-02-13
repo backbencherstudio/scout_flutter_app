@@ -14,6 +14,7 @@ import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
 import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
+import 'package:scout_app/view_model/parent_screen_provider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
@@ -56,6 +57,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<NotificationsScreenProvider>(
           create: (_) => NotificationsScreenProvider(),
         ),
+        ChangeNotifierProvider<ParentScreenProvider>(
+          create: (_) => ParentScreenProvider(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -64,25 +68,29 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               theme: ThemeData(
                 scaffoldBackgroundColor: Colors.white,
+
                 bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                   backgroundColor: Colors.white,
                   selectedItemColor: Color(0xFFE11E1B),
-                  unselectedItemColor: Colors.grey,
+
+                  unselectedItemColor: Color(0xff111315),
                   showUnselectedLabels: false,
                   showSelectedLabels: false,
                   // Dark background color
                   type: BottomNavigationBarType.fixed,
+
                   selectedLabelStyle: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color: Colors.blue,
                   ),
+
                   unselectedLabelStyle: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                    color: Colors
-                        .grey, // Explicitly set grey for unselected labels
-                  ),
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                      color: Color(
+                          0xff111315) // Explicitly set grey for unselected labels
+                      ),
                 ),
 
                 appBarTheme: AppBarTheme(
@@ -141,7 +149,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.profileScreen,
+              initialRoute: '/',
               routes: {
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
