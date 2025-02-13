@@ -4,6 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+import 'package:scout_app/view/Login_Screen/screens/SignUpShareIntrest.dart';
+import 'package:scout_app/view/Login_Screen/screens/login_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUP.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUPTellUS.dart';
 import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
@@ -134,15 +138,16 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: RouteName.profileSettingScreen,
               routes: {
-               // '/': (context) => SplashScreen(),
-                // RouteName.loginScreen: (context) => LoginScreen(),
-                // RouteName.Signup: (context) => Signup(),
-                // RouteName.SignUp2: (context) => SignUp2(),
-                // RouteName.SignUp3: (context) => SignUp3(),
-                // RouteName.homeScreen: (context) => HomeScreen(),
-                // RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
+                '/': (context) => SplashScreen(),
+                RouteName.loginScreen: (context) => LoginScreen(),
+                RouteName.Signup: (context) => Signup(),
+                RouteName.SignUp2: (context) => SignUp2(),
+                RouteName.SignUp3: (context) => SignUp3(),
+                RouteName.homeScreen: (context) => HomeScreen(),
+                RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
                 RouteName.eventCreateScreen: (context) => EventCreateScreen(),
-                RouteName.profileSettingScreen: (context) => ProfileSettingScreen(),
+                RouteName.profileSettingScreen: (context) =>
+                    ProfileSettingScreen(),
               });
         },
       ),

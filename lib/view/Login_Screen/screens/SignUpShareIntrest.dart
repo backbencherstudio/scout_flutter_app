@@ -85,7 +85,7 @@ class _SignUp3State extends State<SignUp3> {
                   ontap: () {
                     Navigator.pushNamedAndRemoveUntil(
                       context,
-                      '${RouteName.homeScreen}',
+                      '${RouteName.ParentsScreen}',
                       (Route<dynamic> route) => false,
                     );
                   },
