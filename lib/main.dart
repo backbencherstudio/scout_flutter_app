@@ -141,19 +141,19 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+              initialRoute: RouteName.profileScreen,
               routes: {
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
-                RouteName.Signup: (context) => Signup(),
-                RouteName.SignUp2: (context) => SignUp2(),
-                RouteName.SignUp3: (context) => SignUp3(),
+                RouteName.signup: (context) => Signup(),
+                RouteName.signUp2: (context) => SignUp2(),
+                RouteName.signUp3: (context) => SignUp3(),
                 RouteName.homeScreen: (context) => HomeScreen(),
                 RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
                 RouteName.eventCreateScreen: (context) => EventCreateScreen(),
                 RouteName.profileSettingScreen: (context) =>
                     ProfileSettingScreen(),
-                RouteName.ParentsScreen: (context) => ParentsScreen(),
+                RouteName.parentsScreen: (context) => ParentsScreen()
               });
         },
       ),
