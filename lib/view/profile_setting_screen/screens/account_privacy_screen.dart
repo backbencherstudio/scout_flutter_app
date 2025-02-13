@@ -6,7 +6,7 @@ import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/widgets/switch_button.dart';
 
 class AccountPrivacyScreen extends StatelessWidget {
-   AccountPrivacyScreen({super.key});
+   const AccountPrivacyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

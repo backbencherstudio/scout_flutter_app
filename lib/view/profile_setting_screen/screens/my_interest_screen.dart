@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/custom_text_field.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_screen/widgets/styles.dart';
 
@@ -27,8 +26,8 @@ class MyInterestScreen extends StatelessWidget {
               SizedBox(height: 20.h,),
 
               Wrap(
-                runSpacing: 9,
-                spacing: 9,
+                runSpacing: 8,
+                spacing: 8,
                 children: [
                   _buildTag("Festival"),
                   _buildTag("Food"),
