@@ -15,41 +15,41 @@ class _ParentsScreenState extends State<ParentsScreen> {
         appBar: AppBar(
           title: Text("parents Screen"),
         ),
-        body: Container(
-          child: Text("bottom navbar"),
-        ),
-        bottomNavigationBar: BottomNavigationBar(items: [
+        body: Text("bottom navbar"),
+        bottomNavigationBar: BottomNavigationBar(
+            items: [
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                size: 32,
-                color: Color(0xFF111315),
+              icon: Image.asset(
+                "assets/icons/home_icon.png",
+                width: 32.w,
+                height: 32.h,
+                fit: BoxFit.cover,
               ),
               label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                size: 32,
-                color: Color(0xFF111315),
+              icon: Image.asset(
+                "assets/icons/search.png",
+                width: 32.w,
+                height: 32.h,
+                fit: BoxFit.cover,
               ),
               label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.bookmark_border_sharp,
-                size: 32,
-                color: Color(0xFF111315),
+              icon: Image.asset(
+                "assets/icons/bookmark_icon.png",
+                width: 32.w,
+                height: 32.h,
+                fit: BoxFit.cover,
               ),
               label: "Bookmark"),
           BottomNavigationBarItem(
-            icon: Stack(
-              children: [
-                CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage(
-                    "assets/images/user.png",
-                  ),
-                ),
-              ],
+            icon: ClipOval(
+              child:  Image.asset(
+                "assets/images/user.png",
+                width: 32.w,
+                height: 32.h,
+                fit: BoxFit.cover,
+              ),
             ),
             label: "Profile",
           ),

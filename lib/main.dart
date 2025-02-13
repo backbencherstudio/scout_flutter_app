@@ -12,6 +12,7 @@ import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
@@ -144,14 +145,15 @@ class MyApp extends StatelessWidget {
               routes: {
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
-                RouteName.Signup: (context) => Signup(),
-                RouteName.SignUp2: (context) => SignUp2(),
-                RouteName.SignUp3: (context) => SignUp3(),
+                RouteName.signup: (context) => Signup(),
+                RouteName.signUp2: (context) => SignUp2(),
+                RouteName.signUp3: (context) => SignUp3(),
                 RouteName.homeScreen: (context) => HomeScreen(),
                 RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
                 RouteName.eventCreateScreen: (context) => EventCreateScreen(),
                 RouteName.profileSettingScreen: (context) =>
                     ProfileSettingScreen(),
+                RouteName.parentsScreen: (context) => ParentsScreen()
               });
         },
       ),

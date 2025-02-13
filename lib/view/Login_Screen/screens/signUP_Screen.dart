@@ -80,7 +80,7 @@ class _SignupState extends State<Signup> {
               ),
               Mybuttons(
                   ontap: () {
-                    Navigator.pushNamed(context, RouteName.SignUp2);
+                    Navigator.pushNamed(context, RouteName.signUp2);
                   },
                   text: "Create account",
                   color: Color(0xFFFB6012),
