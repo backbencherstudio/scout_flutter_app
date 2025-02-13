@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
-import 'package:scout_app/view/Login_Screen/screens/SignUpShareIntrest.dart';
+import 'package:scout_app/view/Login_Screen/screens/SignUpShareIntrest_Screen.dart';
 import 'package:scout_app/view/Login_Screen/screens/login_Screen.dart';
-import 'package:scout_app/view/Login_Screen/screens/signUP.dart';
-import 'package:scout_app/view/Login_Screen/screens/signUPTellUS.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUP_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUPTellUS_Screen.dart';
 import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
@@ -26,7 +26,7 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   // Ensure ScreenUtil is ready
-   await ScreenUtil.ensureScreenSize();
+  await ScreenUtil.ensureScreenSize();
 
   runApp(
     MyApp(),
@@ -140,9 +140,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-
               initialRoute: '/',
-
               routes: {
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
