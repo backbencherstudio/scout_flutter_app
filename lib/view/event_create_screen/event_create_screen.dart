@@ -6,7 +6,7 @@ import 'package:scout_app/view/event_create_screen/widget/event_extras_screen.da
 import 'package:scout_app/view/event_create_screen/widget/event_tags_widget.dart';
 import 'package:scout_app/view/event_create_screen/widget/event_visibility_screen.dart';
 import '../../widgets/custom_dotted_border_input_field.dart';
-import '../profile_setting_screen/screens/event_info_container.dart';
+import '../../widgets/event_info_container.dart';
 import '../../widgets/input_decoration.dart';
 import '../../widgets/primary_button.dart';
 
