@@ -18,6 +18,7 @@ import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/notifications_screen_provider.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/theme_screen_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,6 +55,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<NotificationsScreenProvider>(
           create: (_) => NotificationsScreenProvider(),
+        ),
+        ChangeNotifierProvider<ThemeScreenProvider>(
+          create: (_) => ThemeScreenProvider(),
         ),
       ],
       child: ScreenUtilInit(
@@ -141,10 +145,10 @@ class MyApp extends StatelessWidget {
               ),
               debugShowCheckedModeBanner: false,
 
-              initialRoute: '/',
+              initialRoute:RouteName.profileSettingScreen,
 
               routes: {
-                '/': (context) => SplashScreen(),
+                // '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
                 RouteName.Signup: (context) => Signup(),
                 RouteName.SignUp2: (context) => SignUp2(),

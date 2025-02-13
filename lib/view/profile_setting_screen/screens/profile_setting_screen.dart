@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/account_privacy_screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/notifications_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/theme_screen.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/my_details_screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/my_interest_screen.dart';
@@ -128,7 +129,11 @@ class ProfileSettingScreen extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (_)=>  NotificationsScreen()));
               },),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/icons/theme.png",title: "Theme",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/light_mode.png",title: "Theme",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>  ThemeScreen()));
+              },
+
+              ),
               SizedBox(height: 24.h,),
               Text("Security",style: Theme.of(context).textTheme.bodyMedium,),
               SizedBox(
