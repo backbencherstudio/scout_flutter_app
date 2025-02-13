@@ -5,11 +5,10 @@ import 'package:scout_app/view/event_create_screen/widget/event_activities.dart'
 import 'package:scout_app/view/event_create_screen/widget/event_extras_screen.dart';
 import 'package:scout_app/view/event_create_screen/widget/event_tags_widget.dart';
 import 'package:scout_app/view/event_create_screen/widget/event_visibility_screen.dart';
-
-import '../../../utils/custom_dotted_border_input_field.dart';
-import '../../../utils/event_info_container.dart';
-import '../../../utils/primary_button.dart';
-import '../../utils/input_decoration.dart';
+import '../../widgets/custom_dotted_border_input_field.dart';
+import '../profile_setting_screen/screens/event_info_container.dart';
+import '../../widgets/input_decoration.dart';
+import '../../widgets/primary_button.dart';
 
 class EventCreateScreen extends StatelessWidget {
   const EventCreateScreen({super.key});
@@ -44,51 +43,60 @@ class EventCreateScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              TextFormField(
-                decoration: inputDecoration(
-                  context,
-                  hinText: 'Event name',
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'Event name',
+                  ),
+                  obscureText: true, // Useful for password fields
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    return null;
+                  },
                 ),
-                obscureText: true, // Useful for password fields
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
-                  }
-                  return null;
-                },
               ),
 
               SizedBox(
                 height: 16.h,
               ),
-              TextFormField(
-                decoration: inputDecoration(
-                  context,
-                  hinText: 'Event date',
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'Event date',
+                  ),
+                  obscureText: true, // Useful for password fields
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Event date';
+                    }
+                    return null;
+                  },
                 ),
-                obscureText: true, // Useful for password fields
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Event date';
-                  }
-                  return null;
-                },
               ),
               SizedBox(
                 height: 16.h,
               ),
-              TextFormField(
-                decoration: inputDecoration(
-                  context,
-                  hinText: 'End date (optional)',
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'End date (optional)',
+                  ),
+                  obscureText: true, // Useful for password fields
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Event date';
+                    }
+                    return null;
+                  },
                 ),
-                obscureText: true, // Useful for password fields
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Event date';
-                  }
-                  return null;
-                },
               ),
 
               SizedBox(
@@ -97,53 +105,62 @@ class EventCreateScreen extends StatelessWidget {
               Row(
                 children: [
                   Flexible(
-                      child:            TextFormField(
-                        decoration: inputDecoration(
-                          context,
-                          hinText: 'Start time',
+                      child:                       SizedBox(
+                        height: 48.h,
+                        child: TextFormField(
+                          decoration: inputDecoration(
+                            context,
+                            hinText: 'Start time',
+                          ),
+                          obscureText: true, // Useful for password fields
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Event date';
+                            }
+                            return null;
+                          },
                         ),
-                        obscureText: true, // Useful for password fields
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Event date';
-                          }
-                          return null;
-                        },
                       ),),
                   SizedBox(
                     width: 9.w,
                   ),
                   Flexible(
-                      child:            TextFormField(
-                        decoration: inputDecoration(
-                          context,
-                          hinText: 'End time',
+                      child:                        SizedBox(
+                        height: 48.h,
+                        child: TextFormField(
+                          decoration: inputDecoration(
+                            context,
+                            hinText: 'End time',
+                          ),
+                          obscureText: true, // Useful for password fields
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Event date';
+                            }
+                            return null;
+                          },
                         ),
-                        obscureText: true, // Useful for password fields
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Event date';
-                          }
-                          return null;
-                        },
                       ),),
                 ],
               ),
               SizedBox(
                 height: 16.h,
               ),
-              TextFormField(
-                maxLines: 5, // Allows up to 5 lines of input
-                decoration: inputDecoration(
-                  context,
-                  hinText: 'Description',
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  maxLines: 5, // Allows up to 5 lines of input
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'Description',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a description';
+                    }
+                    return null;
+                  },
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a description';
-                  }
-                  return null;
-                },
               )
               ,
               SizedBox(

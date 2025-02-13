@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/primary_button.dart';
-import '../../../utils/custom_header.dart';
-import '../../../utils/input_decoration.dart';
+import 'package:scout_app/widgets/primary_button.dart';
+import '../../../widgets/custom_header.dart';
+import '../../../widgets/input_decoration.dart';
 class EventTagsScreen extends StatelessWidget {
   const EventTagsScreen({super.key});
 

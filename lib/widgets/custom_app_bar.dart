@@ -1,7 +1,5 @@
-
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 AppBar customAppBar(BuildContext context, String title,){
   return AppBar(
@@ -17,6 +15,11 @@ AppBar customAppBar(BuildContext context, String title,){
           ),
         )
     ),
-    title: Text(title,style: Theme.of(context).textTheme.bodyMedium,),
+    title: Text(title,style: AppBarTheme.of(context).titleTextStyle!.copyWith(
+        fontSize: 14.sp,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.w500,
+        color: Color(0xFF000000)
+    )),
   );
 }

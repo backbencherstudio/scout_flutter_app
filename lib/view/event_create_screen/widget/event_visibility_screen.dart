@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/primary_button.dart';
-import '../../../utils/custom_header.dart';
+import 'package:scout_app/widgets/primary_button.dart';
+import '../../../widgets/custom_header.dart';
 
 class EventVisibilityScreen extends StatelessWidget {
   const EventVisibilityScreen({super.key});

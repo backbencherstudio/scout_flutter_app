@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/view/Login_Screen/GlassBox.dart';
+import 'package:scout_app/view/Login_Screen/screens/GlassBox.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

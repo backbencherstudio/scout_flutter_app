@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/view/profile_setting_ui/my_details_screen.dart';
-import 'package:scout_app/utils/custom_app_bar.dart';
-import 'package:scout_app/view/profile_setting_ui/my_interest_screen.dart';
-import 'package:scout_app/view/profile_setting_ui/social_link_screen.dart';
-import 'package:scout_app/view/profile_setting_ui/widgets/custom_info_container.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/account_privacy_screen.dart';
+import 'package:scout_app/widgets/custom_app_bar.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/my_details_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/my_interest_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/social_link_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/widgets/custom_info_container.dart';
 
 class ProfileSettingScreen extends StatelessWidget {
   const ProfileSettingScreen({super.key});
@@ -15,7 +16,7 @@ class ProfileSettingScreen extends StatelessWidget {
       appBar:  customAppBar(context, "Account Settings"),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding:  EdgeInsets.symmetric(horizontal: 24.w),
           child: ListView(
             children: [
 
@@ -27,20 +28,20 @@ class ProfileSettingScreen extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: Color(0xFFFB6012), width: 1.5),
+                      border: Border.all(color: Color(0xFFFB6012), width: 1.5.w),
                     ),
                     child: ClipOval(
                       child: Image.asset(
                         "assets/images/event/event_01.png",
-                        width: 56.0,
-                        height: 56.0,
+                        width: 56.0.w,
+                        height: 56.0.h,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           // Show the icon in case of an error
                           return Icon(
                             Icons.account_circle,
                             color: Colors.grey,
-                            size: 56.0,
+                            size: 56.0.r,
                           );
                         },
                       ),
@@ -118,7 +119,9 @@ class ProfileSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/icons/privacy.png",title: "Account Privacy",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/privacy.png",title: "Account Privacy",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>  AccountPrivacyScreen()));
+              },),
               SizedBox(height: 4.h,),
               CustomInfoContainer(imagePath: "assets/icons/notification.png",title: "Notifications",onTap: (){},),
               SizedBox(height: 4.h,),

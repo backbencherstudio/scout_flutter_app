@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/utils/custom_text_field.dart';
-import 'package:scout_app/utils/custom_app_bar.dart';
-import 'package:scout_app/utils/primary_button.dart';
-import 'package:scout_app/view/profile_setting_ui/widgets/styles.dart';
+import 'package:scout_app/widgets/custom_app_bar.dart';
+import 'package:scout_app/view/profile_setting_screen/widgets/styles.dart';
+
+import '../../../widgets/primary_button.dart';
 
 class MyDetailsScreen extends StatelessWidget {
   const MyDetailsScreen({super.key});

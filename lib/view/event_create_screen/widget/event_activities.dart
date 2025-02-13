@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/custom_header.dart';
-import '../../../utils/input_decoration.dart';
-import '../../../utils/primary_button.dart';
+import 'package:scout_app/widgets/custom_header.dart';
+import '../../../widgets/input_decoration.dart';
+import '../../../widgets/primary_button.dart';
 class EventActivities extends StatelessWidget {
   const EventActivities({super.key});
 
@@ -29,17 +29,20 @@ class EventActivities extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  TextFormField(
-                    decoration: inputDecoration(
-                      context,
-                      hinText: 'Activity name',
+                  SizedBox(
+                    height: 48.h,
+                    child: TextFormField(
+                      decoration: inputDecoration(
+                        context,
+                        hinText: 'Activity name',
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter a description';
+                        }
+                        return null;
+                      },
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a description';
-                      }
-                      return null;
-                    },
                   ),
                   SizedBox(
                     height: 12.h,
@@ -47,34 +50,40 @@ class EventActivities extends StatelessWidget {
                   Row(
                     children: [
                       Flexible(
-                        child: TextFormField(
-                          decoration: inputDecoration(
-                            context,
-                            hinText: 'Start time',
+                        child:              SizedBox(
+                          height: 48.h,
+                          child: TextFormField(
+                            decoration: inputDecoration(
+                              context,
+                              hinText: 'Start time',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter a description';
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a description';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       SizedBox(
                         width: 7.w,
                       ),
                       Flexible(
-                        child: TextFormField(
-                          decoration: inputDecoration(
-                            context,
-                            hinText: 'End time',
+                        child:               SizedBox(
+                          height: 48.h,
+                          child: TextFormField(
+                            decoration: inputDecoration(
+                              context,
+                              hinText: 'End time',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter a description';
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a description';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                     ],
@@ -137,34 +146,40 @@ class EventActivities extends StatelessWidget {
                   Row(
                     children: [
                       Flexible(
-                        child: TextFormField(
-                          decoration: inputDecoration(
-                            context,
-                            hinText: 'Start time',
+                        child:               SizedBox(
+                          height: 48.h,
+                          child: TextFormField(
+                            decoration: inputDecoration(
+                              context,
+                              hinText: 'Start time',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter a description';
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a description';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       SizedBox(
                         width: 7.w,
                       ),
                       Flexible(
-                        child: TextFormField(
-                          decoration: inputDecoration(
-                            context,
-                            hinText: 'End time',
+                        child:               SizedBox(
+                          height: 48.h,
+                          child: TextFormField(
+                            decoration: inputDecoration(
+                              context,
+                              hinText: 'End time',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter a description';
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a description';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                     ],
@@ -209,17 +224,20 @@ class EventActivities extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  TextFormField(
-                    decoration: inputDecoration(
-                      context,
-                      hinText: 'Activity name',
+                  SizedBox(
+                    height: 48.h,
+                    child: TextFormField(
+                      decoration: inputDecoration(
+                        context,
+                        hinText: 'Activity name',
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter a description';
+                        }
+                        return null;
+                      },
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a description';
-                      }
-                      return null;
-                    },
                   ),
                   SizedBox(
                     height: 12.h,
@@ -227,34 +245,40 @@ class EventActivities extends StatelessWidget {
                   Row(
                     children: [
                       Flexible(
-                        child: TextFormField(
-                          decoration: inputDecoration(
-                            context,
-                            hinText: 'Start time',
+                        child:               SizedBox(
+                          height: 48.h,
+                          child: TextFormField(
+                            decoration: inputDecoration(
+                              context,
+                              hinText: 'Start time',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter a description';
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a description';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                       SizedBox(
                         width: 7.w,
                       ),
                       Flexible(
-                        child: TextFormField(
-                          decoration: inputDecoration(
-                            context,
-                            hinText: 'End time',
+                        child:               SizedBox(
+                          height: 48.h,
+                          child: TextFormField(
+                            decoration: inputDecoration(
+                              context,
+                              hinText: 'End time',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter a description';
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter a description';
-                            }
-                            return null;
-                          },
                         ),
                       ),
                     ],

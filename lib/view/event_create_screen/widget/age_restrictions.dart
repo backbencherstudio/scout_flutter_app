@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/primary_button.dart';
-import '../../../utils/custom_header.dart';
-import '../../../utils/input_decoration.dart';
+import 'package:scout_app/widgets/primary_button.dart';
+import '../../../widgets/custom_header.dart';
+import '../../../widgets/input_decoration.dart';
 class AgeRestrictions extends StatelessWidget {
   const AgeRestrictions({super.key});
 
@@ -17,18 +17,21 @@ class AgeRestrictions extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 20.h),
-            TextFormField(
+            SizedBox(
+              height: 48.h,
+              child: TextFormField(
 
-              decoration: inputDecoration(
-                context,
-                hinText: 'Minimum age required',
+                decoration: inputDecoration(
+                  context,
+                  hinText: 'Minimum age required',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a description';
+                  }
+                  return null;
+                },
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter a description';
-                }
-                return null;
-              },
             ),
 
             SizedBox(height: 16.h),
