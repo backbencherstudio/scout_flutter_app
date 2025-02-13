@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
+import 'package:scout_app/widgets/switch_button.dart';
 
 class AccountPrivacyScreen extends StatelessWidget {
    AccountPrivacyScreen({super.key});
@@ -51,29 +52,4 @@ class AccountPrivacyScreen extends StatelessWidget {
   }
 }
 
-class SwitchButton extends StatelessWidget {
-  const SwitchButton({
-    super.key,
-    required this.isSwitchOn,
-    required this.onChange,
-  });
 
-  final bool isSwitchOn;
-  final ValueChanged<bool> onChange; // More idiomatic type for callback
-
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      thumbIcon: WidgetStateProperty.all(
-        const Icon(Icons.circle, size: 20, color: Colors.white),
-      ),
-      activeColor: Colors.green,
-      inactiveTrackColor: const Color(0xFFC6CACD),
-      activeTrackColor: const Color(0xFFFB6012),
-      trackOutlineColor: WidgetStateColor.transparent,
-      thumbColor: const WidgetStatePropertyAll<Color>(Colors.white),
-      value: isSwitchOn,
-      onChanged: onChange,
-    );
-  }
-}
