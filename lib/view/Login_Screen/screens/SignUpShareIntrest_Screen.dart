@@ -54,8 +54,7 @@ class _SignUp3State extends State<SignUp3> {
               ),
               TextFormField(
                 controller: SearchController,
-                decoration:
-                    inputDecor(context, "Search", "Search", Icon(Icons.search)),
+                decoration: inputDecor(context, "Search", Icon(Icons.search)),
               ),
               SizedBox(
                 height: 16.h,
