@@ -57,15 +57,15 @@ class _SignupState extends State<Signup> {
               ),
               TextFormField(
                 controller: emailController,
-                decoration: inputDecor(context, "Email", "Email", null),
+                decoration: inputDecor(context, "Email", null),
               ),
               SizedBox(
                 height: 16.h,
               ),
               TextFormField(
                 controller: passwordController,
-                decoration: inputDecor(context, "Password", "Password",
-                    Icon(Icons.visibility_off_sharp)),
+                decoration: inputDecor(
+                    context, "Password", Icon(Icons.visibility_off_sharp)),
               ),
               SizedBox(
                 height: 16.h,
@@ -73,7 +73,7 @@ class _SignupState extends State<Signup> {
               TextFormField(
                 controller: confirmEmailController,
                 decoration: inputDecor(context, "Confirm Password",
-                    "Confirm Password", Icon(Icons.visibility_off_sharp)),
+                    Icon(Icons.visibility_off_sharp)),
               ),
               SizedBox(
                 height: 150.h,

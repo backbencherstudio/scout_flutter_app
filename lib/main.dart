@@ -12,6 +12,7 @@ import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/event_details_screen/event_activity_list_screen/activity_screen.dart';
 import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
 import 'package:scout_app/view/search_screen/widget/category_detail_list.dart';
@@ -63,16 +64,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<ThemeScreenProvider>(
           create: (_) => ThemeScreenProvider(),
         ),
-
         ChangeNotifierProvider<ParentScreenProvider>(
           create: (_) => ParentScreenProvider(),
         ),
-
         ChangeNotifierProvider<SearchScreenProvider>(
           create: (_) => SearchScreenProvider(),
         ),
-
-
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -80,7 +77,6 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
               theme: ThemeData(
-
                 scaffoldBackgroundColor: Colors.white,
 
                 bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -100,10 +96,11 @@ class MyApp extends StatelessWidget {
                   ),
 
                   unselectedLabelStyle: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xff111315) // Explicitly set grey for unselected labels
-                  ),
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                      color: Color(
+                          0xff111315) // Explicitly set grey for unselected labels
+                      ),
                 ),
 
                 appBarTheme: AppBarTheme(
@@ -162,9 +159,9 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-
               initialRoute: '/',
               routes: {
+                // '/': (context) => ActivityScreen(),
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
                 RouteName.signup: (context) => Signup(),
@@ -177,6 +174,7 @@ class MyApp extends StatelessWidget {
                     ProfileSettingScreen(),
                 RouteName.parentsScreen: (context) => ParentsScreen(),
                 RouteName.categoryDetailList: (context) => CategoryDetailList(),
+                RouteName.activityScreen: (context) => ActivityScreen(),
               });
         },
       ),
