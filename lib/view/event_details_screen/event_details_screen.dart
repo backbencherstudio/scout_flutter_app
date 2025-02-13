@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 
+import 'event_interested_people_screen/event_interested_people_screen.dart';
+
 class EventDetailsScreen extends StatelessWidget{
   const EventDetailsScreen({super.key});
 
@@ -347,7 +349,9 @@ class EventDetailsScreen extends StatelessWidget{
                       ),),
 
                       GestureDetector(
-                        onTap: (){debugPrint("\nSee all button pressed");},
+                        onTap: (){debugPrint("\nSee all button pressed");
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>EventInterestedPeopleScreen(),),);
+                          },
                         child: Text("See all",
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             fontWeight: FontWeight.w100,

@@ -9,6 +9,7 @@ import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
 import 'package:scout_app/view/profile_screen/screen/profile_screen.dart';
+import 'package:scout_app/view/search_screen/screen/search_screen.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
@@ -128,7 +129,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.profileScreen,
+              initialRoute: RouteName.searchScreen,
               routes: {
                // '/': (context) => SplashScreen(),
                 // RouteName.loginScreen: (context) => LoginScreen(),
@@ -137,7 +138,8 @@ class MyApp extends StatelessWidget {
                 // RouteName.SignUp3: (context) => SignUp3(),
                 // RouteName.homeScreen: (context) => HomeScreen(),
                 // RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
-                RouteName.profileScreen: (context) => ProfileScreen(),
+                //RouteName.profileScreen: (context) => ProfileScreen(),
+                RouteName.searchScreen: (context) => SearchScreen(),
               });
         },
       ),
