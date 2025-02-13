@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:scout_app/view_model/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
 
-class AccountPrivacyScreen extends StatefulWidget {
+class AccountPrivacyScreen extends StatelessWidget {
    AccountPrivacyScreen({super.key});
-
-  @override
-  State<AccountPrivacyScreen> createState() => _AccountPrivacyScreenState();
-}
-
-class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
-  bool light = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,21 +27,23 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
                   Spacer(),
                   Transform.scale(
                     scale: 0.75,
-                    child: Switch(
-                      thumbIcon: WidgetStateProperty.all(
-                        Icon(Icons.circle, size: 20,color: Colors.white,), // Fixed icon with fixed size
-                      ),
-                      activeColor: Colors.green,
-                      inactiveTrackColor: Color(0xFFC6CACD) ,
-                      activeTrackColor: Color(0xFFFB6012) ,
-                      trackOutlineColor: WidgetStateColor.transparent,
-                      thumbColor: const WidgetStatePropertyAll<Color>(Colors.white),
-                      value: light,
-                      onChanged: (bool value) {
-                        setState(() {
-                          light = value;
-                        });
-                      },
+                    child: Consumer<AccountPrivacyScreenProvider>(
+                      builder: (context,accountPrivacyProvider,child) {
+                        return Switch(
+                          thumbIcon: WidgetStateProperty.all(
+                            Icon(Icons.circle, size: 20,color: Colors.white,), // Fixed icon with fixed size
+                          ),
+                          activeColor: Colors.green,
+                          inactiveTrackColor: Color(0xFFC6CACD) ,
+                          activeTrackColor: Color(0xFFFB6012) ,
+                          trackOutlineColor: WidgetStateColor.transparent,
+                          thumbColor: const WidgetStatePropertyAll<Color>(Colors.white),
+                          value: accountPrivacyProvider.isSwitchOn,
+                          onChanged: (bool value) {
+                            accountPrivacyProvider.toggleSwitch(value);
+                          },
+                        );
+                      }
                     ),
                   ),
                   SizedBox(height: 24.h,),
