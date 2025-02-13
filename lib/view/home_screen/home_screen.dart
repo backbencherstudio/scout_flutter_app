@@ -21,23 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async  {
       context.read<HomeScreenProvider>().getEvent();
-      await _requestLocationPermission();
+      context.read<HomeScreenProvider>().requestLocationPermission();
     });
     super.initState();
   }
 
-  Future<void> _requestLocationPermission() async {
-    PermissionStatus status = await Permission.location.request();
 
-    if (status.isGranted) {
-      print("Location permission granted");
-    } else if (status.isDenied) {
-      print("Location permission denied");
-    } else if (status.isPermanentlyDenied) {
-      print("Location permission permanently denied. Open app settings.");
-      openAppSettings(); // Opens app settings for manual permission change
-    }
-  }
 
   Widget categoryContainer({
     required BuildContext context,

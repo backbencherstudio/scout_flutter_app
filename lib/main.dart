@@ -22,9 +22,9 @@ void main() async {
 
   // Set device orientation to portrait
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   // Ensure ScreenUtil is ready
-  // await ScreenUtil.ensureScreenSize();
+   await ScreenUtil.ensureScreenSize();
 
   runApp(
     MyApp(),
