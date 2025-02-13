@@ -19,7 +19,9 @@ class EventInterestedPeopleScreen extends StatelessWidget{
           padding:  EdgeInsets.only(left : 8.w),
           child: IconButton(
             onPressed: (){Navigator.pop(context);},
-            icon : Icon(Icons.arrow_back_ios,),),
+            icon : Icon(Icons.arrow_back_ios,
+            color: Color(0xff111315),
+            ),),
         ),
       ),
       body: SafeArea(

@@ -12,7 +12,7 @@ import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
-import 'package:scout_app/view/parentsScreen/activity_screen.dart';
+import 'package:scout_app/view/event_details_screen/event_activity_list_screen/activity_screen.dart';
 import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
 import 'package:scout_app/view/search_screen/widget/category_detail_list.dart';
