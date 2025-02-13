@@ -15,7 +15,7 @@ import 'package:scout_app/view/home_screen/home_screen.dart';
 import 'package:scout_app/view/event_details_screen/event_activity_list_screen/activity_screen.dart';
 import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
-import 'package:scout_app/view/search_screen/widget/category_detail_list.dart';
+import 'package:scout_app/view/search_screen/screen/category_sub_list_screen.dart';
 import 'package:scout_app/view_model/parent_screen_provider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
@@ -173,8 +173,8 @@ class MyApp extends StatelessWidget {
                 RouteName.profileSettingScreen: (context) =>
                     ProfileSettingScreen(),
                 RouteName.parentsScreen: (context) => ParentsScreen(),
-                RouteName.categoryDetailList: (context) => CategoryDetailList(),
                 RouteName.activityScreen: (context) => ActivityScreen(),
+                RouteName.categorySubListScreen: (context) => CategorySubListScreen(),
               });
         },
       ),
