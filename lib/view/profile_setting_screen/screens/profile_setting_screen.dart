@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/account_privacy_screen.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/my_details_screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/my_interest_screen.dart';
@@ -118,7 +119,9 @@ class ProfileSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/icons/privacy.png",title: "Account Privacy",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/privacy.png",title: "Account Privacy",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>  AccountPrivacyScreen()));
+              },),
               SizedBox(height: 4.h,),
               CustomInfoContainer(imagePath: "assets/icons/notification.png",title: "Notifications",onTap: (){},),
               SizedBox(height: 4.h,),

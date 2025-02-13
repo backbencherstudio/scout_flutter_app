@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
               theme: ThemeData(
+                useMaterial3: true,
                 scaffoldBackgroundColor: Colors.white,
                 bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                   backgroundColor: Colors.white,
