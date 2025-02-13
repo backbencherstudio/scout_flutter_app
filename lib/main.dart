@@ -8,6 +8,8 @@ import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
+import 'package:scout_app/view_model/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
@@ -41,6 +43,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<EventDetailsScreenProvider>(
           create: (_) => EventDetailsScreenProvider(),
+        ),
+        ChangeNotifierProvider<AccountPrivacyScreenProvider>(
+          create: (_) => AccountPrivacyScreenProvider(),
         ),
       ],
       child: ScreenUtilInit(
@@ -127,7 +132,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.eventCreateScreen,
+              initialRoute: RouteName.profileSettingScreen,
               routes: {
                // '/': (context) => SplashScreen(),
                 // RouteName.loginScreen: (context) => LoginScreen(),
@@ -137,6 +142,7 @@ class MyApp extends StatelessWidget {
                 // RouteName.homeScreen: (context) => HomeScreen(),
                 // RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
                 RouteName.eventCreateScreen: (context) => EventCreateScreen(),
+                RouteName.profileSettingScreen: (context) => ProfileSettingScreen(),
               });
         },
       ),
