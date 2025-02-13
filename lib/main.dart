@@ -10,10 +10,9 @@ import 'package:scout_app/view/Login_Screen/signUPTellUS.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
-import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/Login_Screen/login_Screen.dart';
-import 'package:scout_app/view/profile_setting_ui/profile_setting_screen.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
@@ -134,13 +133,14 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: '/',
               routes: {
-                '/': (context) => SplashScreen(),
+                '/': (context) => ProfileSettingScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
                 RouteName.Signup: (context) => Signup(),
                 RouteName.SignUp2: (context) => SignUp2(),
                 RouteName.SignUp3: (context) => SignUp3(),
                 RouteName.homeScreen: (context) => HomeScreen(),
                 RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
+                RouteName.profileSettingScreen: (context) => ProfileSettingScreen(),
               });
         },
       ),

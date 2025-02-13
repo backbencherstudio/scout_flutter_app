@@ -1,49 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/custom_text_field.dart';
-import 'package:scout_app/utils/custom_app_bar.dart';
+import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/utils/primary_button.dart';
-import 'package:scout_app/view/profile_setting_ui/widgets/styles.dart';
+import 'package:scout_app/view/profile_setting_screen/widgets/social_media_card.dart';
 
-class MyDetailsScreen extends StatelessWidget {
-  const MyDetailsScreen({super.key});
+class SocialLinkScreen extends StatelessWidget {
+  const SocialLinkScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, "My Details"),
+      appBar: customAppBar(context, "Social Links"),
       body: SafeArea(
         child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 24.w),
           child: Column(
             children: [
               SizedBox(height: 32.h,),
-              TextFormField(
-                decoration: textFieldDecoration(context, "Full Name", null)
-              ),
+              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              TextFormField(
-                  decoration: textFieldDecoration(context, "Username", null)
-              ),
+              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              TextFormField(
-                  decoration: textFieldDecoration(context, "Email Address", null)
-              ),
+              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              TextFormField(
-                maxLines: 3,
-                  decoration: textFieldDecoration(context, "Bio", null)
-              ),
+              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
+              SizedBox(height: 24.h,),
+              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
+              SizedBox(height: 24.h,),
               Spacer(),
               PrimaryButton(text: "Save",
                 color: Color(0xFFFB6012),
                 textColor: Colors.white,
                 borderRadius:4,
-              onPressed: (){},
+                onPressed: (){},
               ),
               SizedBox(height: 16.h,),
               TextButton(onPressed: (){}, child: Text("Cancel",style: Theme.of(context).textTheme.bodyLarge,)),
               SizedBox(height: 16.h,),
+
             ],
           ),
         ),
