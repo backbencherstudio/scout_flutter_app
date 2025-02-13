@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:scout_app/model/event_model.dart';
 
 class HomeScreenProvider with ChangeNotifier{
@@ -104,6 +105,19 @@ class HomeScreenProvider with ChangeNotifier{
   Future<void> getEvent() async {
     eventModel = EventModel.fromJson(_demoEvents);
     notifyListeners();
+  }
+
+  Future<void> requestLocationPermission() async {
+    PermissionStatus status = await Permission.location.request();
+
+    if (status.isGranted) {
+      print("Location permission granted");
+    } else if (status.isDenied) {
+      print("Location permission denied");
+    } else if (status.isPermanentlyDenied) {
+      print("Location permission permanently denied. Open app settings.");
+      openAppSettings(); // Opens app settings for manual permission change
+    }
   }
 
 }

@@ -8,19 +8,18 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/login/loginpic.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
-          child: Column(
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset("assets/login/loginpic.png",
+              width: double.infinity,
+            height: double.infinity,
+              fit: BoxFit.cover,),
+
+          Column(
             children: [
               SizedBox(
-                height: 140,
+                height: 140.h,
               ),
               Center(
                 child: Image.asset(
@@ -30,12 +29,15 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 295,
+                height: 250.h,
               ),
-              Expanded(child: Glassbox()),
+              Expanded(child: Padding(
+                padding:  EdgeInsets.all(8.0.r),
+                child: Glassbox(),
+              ),),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
