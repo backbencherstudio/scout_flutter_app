@@ -55,7 +55,7 @@ class SearchScreen extends StatelessWidget {
              return  GestureDetector(
                onTap: (){
                  debugPrint("\nCategory pressed!\n");
-                 Navigator.pushNamed(context, RouteName.categoryDetailList);
+                 Navigator.pushNamed(context, RouteName.categorySubListScreen);
                },
                child: Container(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),

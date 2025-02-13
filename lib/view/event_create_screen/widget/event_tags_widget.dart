@@ -66,7 +66,7 @@ class EventTagsScreen extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
       decoration: BoxDecoration(
         color: Color(0xffF4F4F4), // Background color
-        borderRadius: BorderRadius.circular(10.r),
+        borderRadius: BorderRadius.circular(4.r),
       ),
       child: Text(
         label,

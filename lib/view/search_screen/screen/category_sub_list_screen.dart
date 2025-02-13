@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:scout_app/view/home_screen/widgets/event_list.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 
-class CategoryDetailList extends StatelessWidget {
-  const CategoryDetailList({super.key});
+class CategorySubListScreen extends StatelessWidget {
+  const CategorySubListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +70,7 @@ class FilterChipWidget extends StatelessWidget {
   final String image;
   final String label;
 
-  const FilterChipWidget({ 
+  const FilterChipWidget({
     super.key,
     required this.image,
     required this.label,

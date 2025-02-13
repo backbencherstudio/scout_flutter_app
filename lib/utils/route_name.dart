@@ -11,6 +11,7 @@ class RouteName {
   static const String signUp2 = "/signUp2";
   static const String signUp3 = "/signUp3";
   static const String parentsScreen = "/parentsScreen";
-  static const String categoryDetailList = "/categoryDetailList";
+  static const String categorySubListScreen = "/categorySubListScreen";
+  static const String savedEventScreen = "/savedEventScreen";
 
 }
