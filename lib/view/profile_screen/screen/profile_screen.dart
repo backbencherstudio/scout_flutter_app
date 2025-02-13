@@ -13,73 +13,55 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         titleSpacing: 0, // Ensures alignment from the left
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right : 10.0),
-            child: GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileSettingScreen()));
-              },
-              child: Image.asset(
-                "assets/icons/setting.png",
-                height: 24.h,
-                width: 24.w,
+        title: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 22.w),
+          child: Row(
+            children: [
+              Text(
+                "Profile",
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
               ),
-            ),
+              Spacer(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfileSettingScreen()));
+                },
+                child: Image.asset(
+                  "assets/icons/setting.png",
+                  height: 24.h,
+                  width: 24.w,
+                ),
+              ),
+            ],
           ),
-        ],
-        title:
-        // Padding(
-        //   padding: EdgeInsets.symmetric(horizontal: 22.w),
-        //   child: Row(
-        //     children: [
-              Padding(
-                padding: const EdgeInsets.only(left : 10.0),
-                child: Text(
-                  "Profile",
-                  style: Theme.of(context).appBarTheme.titleTextStyle?.copyWith(
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                           //   ),
-                          //     Spacer(),
-                          //     GestureDetector(
-                          //       onTap: (){
-                          //         Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileSettingScreen()));
-                          //       },
-                          //       child: Image.asset(
-                          //         "assets/icons/setting.png",
-                          //         height: 24.h,
-                          //         width: 24.w,
-                          //       ),
-                          //     ),
-                          //   ],
-                          // ),
-                        ),
-              ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment:
-            CrossAxisAlignment.start, // Aligns all text to the left
+                CrossAxisAlignment.start, // Aligns all text to the left
             children: [
               SizedBox(height: 16.h),
 
               // Profile Image
               Container(
-                decoration: BoxDecoration(
-
-                ),
+                decoration: BoxDecoration(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Color(0xFFFB6012), width: 1.5.w),
+                        border:
+                            Border.all(color: Color(0xFFFB6012), width: 1.5.w),
                       ),
                       child: ClipOval(
                         child: Image.asset(
@@ -104,28 +86,28 @@ class ProfileScreen extends StatelessWidget {
                     Text(
                       "John Doe",
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Color(0xff000000),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
-                      ),
+                            color: Color(0xff000000),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14.sp,
+                          ),
                     ),
                     Text(
                       "@johnnyboi",
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Color(0xff25282A),
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                            color: Color(0xff25282A),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                     ),
                     SizedBox(height: 20.h),
 
                     Text(
                       "Just an oke looking for a vaab ⛱️",
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Color(0xff25282A),
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w300,
-                      ),
+                            color: Color(0xff25282A),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w300,
+                          ),
                     ),
 
                     SizedBox(height: 24.h),
@@ -135,24 +117,27 @@ class ProfileScreen extends StatelessWidget {
                         color: Color(0xffFFF5F0),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 120.w, vertical: 11.h),
-                        child:
-                        GestureDetector(onTap: () {}, child: Text("Edit details",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: Color(0xff000000),
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14.sp
-                        ),)),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 120.w, vertical: 11.h),
+                        child: GestureDetector(
+                            onTap: () {},
+                            child: Text(
+                              "Edit details",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.copyWith(
+                                      color: Color(0xff000000),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14.sp),
+                            )),
                       ),
                     ),
-
                   ],
                 ),
               ),
 
-
               SizedBox(height: 20.h),
-
-
 
               // Ensure this section has a fixed height
               SizedBox(
