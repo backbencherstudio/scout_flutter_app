@@ -113,6 +113,7 @@ class EventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
       itemCount: events.length,
       itemBuilder: (context, index) {
         return Container(
