@@ -6,7 +6,7 @@ class CustomTextField extends StatelessWidget {
   final String? label;
   final VoidCallback onTap;
   final int? width;
-  final String? suffix;
+  final IconData? suffix;
   final int? maxLine;
 
   const CustomTextField({
