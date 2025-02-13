@@ -4,17 +4,19 @@ import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/widget/Mybuttons.dart';
 import 'package:scout_app/view/Login_Screen/widget/inputDecoration.dart';
 
-class SignUp2 extends StatefulWidget {
-  const SignUp2({super.key});
+class Signup extends StatefulWidget {
+  Signup({
+    super.key,
+  });
 
   @override
-  State<SignUp2> createState() => _SignUp2State();
+  State<Signup> createState() => _SignupState();
 }
 
-class _SignUp2State extends State<SignUp2> {
-  final TextEditingController NameController = TextEditingController();
-  final TextEditingController UserNameController = TextEditingController();
-
+class _SignupState extends State<Signup> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmEmailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,7 @@ class _SignUp2State extends State<SignUp2> {
                 height: 40.h,
               ),
               Text(
-                "Tell us about you",
+                "Let’s begin",
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge
@@ -44,7 +46,7 @@ class _SignUp2State extends State<SignUp2> {
                 height: 18.h,
               ),
               Text(
-                "Let’s create your profile",
+                "Create your login details below",
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium
@@ -54,43 +56,55 @@ class _SignUp2State extends State<SignUp2> {
                 height: 40.h,
               ),
               TextFormField(
-                controller: NameController,
-                decoration: inputDecor(context, "Full Name", "Full Name", null),
+                controller: emailController,
+                decoration: inputDecor(context, "Email", "Email", null),
               ),
               SizedBox(
                 height: 16.h,
               ),
               TextFormField(
-                controller: UserNameController,
-                decoration: inputDecor(context, "Username*", "Username*", null),
+                controller: passwordController,
+                decoration: inputDecor(context, "Password", "Password",
+                    Icon(Icons.visibility_off_sharp)),
               ),
               SizedBox(
                 height: 16.h,
               ),
-              SizedBox(
-                height: 18.h,
-              ),
-              Text(
-                "*Your username is what your friends will use to find your public profile.",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(fontWeight: FontWeight.w400),
+              TextFormField(
+                controller: confirmEmailController,
+                decoration: inputDecor(context, "Confirm Password",
+                    "Confirm Password", Icon(Icons.visibility_off_sharp)),
               ),
               SizedBox(
                 height: 150.h,
               ),
               Mybuttons(
                   ontap: () {
-                    Navigator.pushNamed(context, RouteName.SignUp3);
+                    Navigator.pushNamed(context, RouteName.signUp2);
                   },
-                  text: "Next",
+                  text: "Create account",
                   color: Color(0xFFFB6012),
                   fontColor: Color(0xFFFFFFFF),
                   fontWeight: FontWeight.w600),
               SizedBox(
                 height: 24.h,
               ),
+              Center(
+                child: RichText(
+                    text: TextSpan(
+                        text: "Already have an account? ",
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: Color(0xFF000000),
+                            ),
+                        children: <TextSpan>[
+                      TextSpan(
+                        text: "sign in",
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Color(0xFF000000),
+                            decoration: TextDecoration.underline),
+                      )
+                    ])),
+              )
             ],
           ),
         ),

@@ -7,8 +7,8 @@ class RouteName {
   static const String signUpScreen = "/signUpScreen";
   static const String eventCreateScreen = "/eventCreateScreen";
   static const String eventDetailsScreen = "/eventDetailsScreen";
-  static const String Signup = "/Signup";
-  static const String SignUp2 = "/SignUp2";
-  static const String SignUp3 = "/SignUp3";
-  static const String ParentsScreen = "/ParentsScreen";
+  static const String signup = "/signup";
+  static const String signUp2 = "/signUp2";
+  static const String signUp3 = "/signUp3";
+  static const String parentsScreen = "/parentsScreen";
 }
