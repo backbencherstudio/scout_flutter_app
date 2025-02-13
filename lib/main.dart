@@ -141,7 +141,8 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+
+              initialRoute: RouteName.profileScreen,
               routes: {
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
