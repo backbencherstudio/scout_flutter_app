@@ -14,6 +14,7 @@ import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
 import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
+import 'package:scout_app/view/search_screen/widget/category_detail_list.dart';
 import 'package:scout_app/view_model/parent_screen_provider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
@@ -21,6 +22,7 @@ import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/notifications_screen_provider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/theme_screen_provider.dart';
+import 'package:scout_app/view_model/search_screen_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,6 +66,10 @@ class MyApp extends StatelessWidget {
 
         ChangeNotifierProvider<ParentScreenProvider>(
           create: (_) => ParentScreenProvider(),
+        ),
+
+        ChangeNotifierProvider<SearchScreenProvider>(
+          create: (_) => SearchScreenProvider(),
         ),
 
 
@@ -169,7 +175,8 @@ class MyApp extends StatelessWidget {
                 RouteName.eventCreateScreen: (context) => EventCreateScreen(),
                 RouteName.profileSettingScreen: (context) =>
                     ProfileSettingScreen(),
-                RouteName.parentsScreen: (context) => ParentsScreen()
+                RouteName.parentsScreen: (context) => ParentsScreen(),
+                RouteName.categoryDetailList: (context) => CategoryDetailList(),
               });
         },
       ),
