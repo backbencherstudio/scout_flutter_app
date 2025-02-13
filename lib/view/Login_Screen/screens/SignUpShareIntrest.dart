@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/utils/route_name.dart';
-import 'package:scout_app/view/Login_Screen/BoxOfCatagory.dart';
-import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
-import 'package:scout_app/view/Login_Screen/inputDecoration.dart';
+import 'package:scout_app/view/Login_Screen/widget/BoxOfCatagory.dart';
+import 'package:scout_app/view/Login_Screen/widget/Mybuttons.dart';
+import 'package:scout_app/view/Login_Screen/widget/inputDecoration.dart';
 
 class SignUp3 extends StatefulWidget {
   const SignUp3({super.key});
