@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/custom_text_field.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_screen/widgets/styles.dart';
 
@@ -26,38 +25,25 @@ class MyInterestScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.h,),
 
-              // SizedBox(
-              //   height: 250,
-              //   child: GridView.builder(
-              //       itemCount: interestTag.length,
-              //       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              //         maxCrossAxisExtent: 80,  // Adjusting max width for the items
-              //         mainAxisSpacing: 10,       // Spacing between rows
-              //         crossAxisSpacing: 10,
-              //         childAspectRatio:4// Spacing between columns
-              //       ),
-              //       itemBuilder: (context,index){
-              //         return Container(
-              //           padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),  // Padding for better content spacing
-              //           decoration: BoxDecoration(
-              //             color: Color(0xFFF4F4F4),
-              //             borderRadius: BorderRadius.circular(4),
-              //             border: Border.all(color: Colors.grey, width: 0.5),  // Optional border for better visibility
-              //           ),
-              //           child: Align(
-              //             alignment: Alignment.center,  // Center the text within the container
-              //             child: Text(
-              //               interestTag[index],
-              //               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              //                 fontWeight: FontWeight.w400,
-              //                 fontSize: 14,  // You can adjust the font size here if needed
-              //               ),
-              //             ),
-              //           ),
-              //         );;
-              //       }
-              //   ),
-              // ),
+              Wrap(
+                runSpacing: 8,
+                spacing: 8,
+                children: [
+                  _buildTag("Festival"),
+                  _buildTag("Food"),
+                  _buildTag("Wine"),
+                  _buildTag("Sports"),
+                  _buildTag("Literature"),
+                  _buildTag("Concerts"),
+                  _buildTag("Nightlife"),
+                  _buildTag("Music"),
+                  _buildTag("Film"),
+                  _buildTag("Outdoor"),
+                  _buildTag("Tech"),
+                  _buildTag("Art"),
+                  _buildTag("Fundraising"),
+                ],
+              ),
 
               Spacer(),
               PrimaryButton(text: "Save",
@@ -75,4 +61,21 @@ class MyInterestScreen extends StatelessWidget {
       ),
     );
   }
+   Widget _buildTag(String label) {
+     return Container(
+       padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+       decoration: BoxDecoration(
+         color: Color(0xffF4F4F4), // Background color
+         borderRadius: BorderRadius.circular(4.r),
+       ),
+       child: Text(
+         label,
+         style: TextStyle(
+           color: Color(0xff000000),
+           fontSize: 14.sp,
+           fontWeight: FontWeight.w400,
+         ),
+       ),
+     );
+}
 }

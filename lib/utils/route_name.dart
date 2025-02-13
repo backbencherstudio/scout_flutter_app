@@ -14,4 +14,6 @@ class RouteName {
   static const String categorySubListScreen = "/categorySubListScreen";
   static const String savedEventScreen = "/savedEventScreen";
 
+  static const String activityScreen = "/activityScreen";
+  static const String categoryDetailList = "/categoryDetailList";
 }

@@ -55,14 +55,14 @@ class _SignUp2State extends State<SignUp2> {
               ),
               TextFormField(
                 controller: NameController,
-                decoration: inputDecor(context, "Full Name", "Full Name", null),
+                decoration: inputDecor(context, "Full Name", null),
               ),
               SizedBox(
                 height: 16.h,
               ),
               TextFormField(
                 controller: UserNameController,
-                decoration: inputDecor(context, "Username*", "Username*", null),
+                decoration: inputDecor(context, "Username*", null),
               ),
               SizedBox(
                 height: 16.h,
