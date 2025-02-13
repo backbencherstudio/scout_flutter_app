@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/utils/primary_button.dart';
 import '../../../utils/custom_header.dart';
-import '../../../utils/custom_text_field.dart';
-
+import '../../../utils/input_decoration.dart';
 class EventTagsScreen extends StatelessWidget {
   const EventTagsScreen({super.key});
 
@@ -12,16 +11,24 @@ class EventTagsScreen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: ListView(
+        child: Column(
           children: [
             CustomHeader(title: "Tags"),
             SizedBox(height: 34.h),
             SizedBox(
               height: 48.h,
-              child: CustomTextField(
-                label: "Search",
-                onTap: () {},
-                suffix: Icons.search, // Fixed: Use an Icon widget
+              child: TextFormField(
+                decoration: inputDecoration(
+                  context,
+                  hinText: 'Search',
+                  suffixIcon: Icons.search, // Corrected suffix icon usage
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a description';
+                  }
+                  return null;
+                },
               ),
             ),
             SizedBox(height: 16.h),
@@ -44,10 +51,10 @@ class EventTagsScreen extends StatelessWidget {
                 _buildTag("Fundraising"),
               ],
             ),
-            SizedBox(
-              height: 200.h,
-            ),
-            PrimaryButton(text: "Update", onPressed: () {})
+            // Add Spacer to push the button to the bottom
+            Spacer(),
+            PrimaryButton(text: "Update", onPressed: () {}),
+            SizedBox(height: 20.h), // Add some spacing from bottom
           ],
         ),
       ),
@@ -56,7 +63,7 @@ class EventTagsScreen extends StatelessWidget {
 
   Widget _buildTag(String label) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 20.w),
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
       decoration: BoxDecoration(
         color: Color(0xffF4F4F4), // Background color
         borderRadius: BorderRadius.circular(10.r),
@@ -64,9 +71,10 @@ class EventTagsScreen extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-            color: Color(0xff000000),
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400),
+          color: Color(0xff000000),
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+        ),
       ),
     );
   }

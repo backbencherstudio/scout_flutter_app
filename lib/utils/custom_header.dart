@@ -17,24 +17,29 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0,
-      centerTitle: true,
+      titleSpacing: 0,
       leading: showBackButton
           ? IconButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        icon: const Icon(
-          Icons.arrow_back_ios,
-          color: Color(0xFF111315),
-        ),
-      )
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Color(0xFF111315),
+              ),
+            )
           : null, // If showBackButton is false, remove leading button
-      title: Text(
-        title,
-        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
+      title: Row(
+        children: [
+          if (!showBackButton) SizedBox(width: 16), // Space if no back button
+          Text(
+            title,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+          ),
+        ],
       ),
       actions: actions, // Allows custom actions like icons/buttons
     );

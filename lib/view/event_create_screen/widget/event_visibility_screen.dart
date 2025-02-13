@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/utils/primary_button.dart';
-
 import '../../../utils/custom_header.dart';
 
 class EventVisibilityScreen extends StatelessWidget {
@@ -11,14 +10,13 @@ class EventVisibilityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomHeader(
-        title: 'Age Restrictions',
+        title: 'Event visibility',
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           children: [
             SizedBox(height: 20.h),
-
 
             SizedBox(height: 16.h),
 
@@ -34,10 +32,10 @@ class EventVisibilityScreen extends StatelessWidget {
                     Text(
                       "ID required",
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: const Color(0xff000000),
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                            color: const Color(0xff000000),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                     ),
                     const Spacer(),
                     Image.asset(
@@ -49,7 +47,9 @@ class EventVisibilityScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.h,),
+            SizedBox(
+              height: 16.h,
+            ),
 
             Container(
               decoration: BoxDecoration(
@@ -63,10 +63,10 @@ class EventVisibilityScreen extends StatelessWidget {
                     Text(
                       "Own alcohol allowed",
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: const Color(0xff000000),
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                            color: const Color(0xff000000),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                     ),
                     const Spacer(),
                     Image.asset(

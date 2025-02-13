@@ -7,6 +7,7 @@ import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/SignUpShareIntrest.dart';
 import 'package:scout_app/view/Login_Screen/signUP.dart';
 import 'package:scout_app/view/Login_Screen/signUPTellUS.dart';
+import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
@@ -132,15 +133,16 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+              initialRoute: RouteName.eventCreateScreen,
               routes: {
-                '/': (context) => SplashScreen(),
-                RouteName.loginScreen: (context) => LoginScreen(),
-                RouteName.Signup: (context) => Signup(),
-                RouteName.SignUp2: (context) => SignUp2(),
-                RouteName.SignUp3: (context) => SignUp3(),
-                RouteName.homeScreen: (context) => HomeScreen(),
-                RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
+               // '/': (context) => SplashScreen(),
+                // RouteName.loginScreen: (context) => LoginScreen(),
+                // RouteName.Signup: (context) => Signup(),
+                // RouteName.SignUp2: (context) => SignUp2(),
+                // RouteName.SignUp3: (context) => SignUp3(),
+                // RouteName.homeScreen: (context) => HomeScreen(),
+                // RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
+                RouteName.eventCreateScreen: (context) => EventCreateScreen(),
               });
         },
       ),

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/custom_text_field.dart';
 import 'package:scout_app/utils/primary_button.dart';
-
 import '../../../utils/custom_header.dart';
-
 class EventExtrasScreen extends StatelessWidget {
   const EventExtrasScreen({super.key});
 
@@ -12,7 +9,7 @@ class EventExtrasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomHeader(
-        title: 'Age Restrictions',
+        title: 'Extras',
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
