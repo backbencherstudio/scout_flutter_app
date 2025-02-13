@@ -161,8 +161,8 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               initialRoute: '/',
               routes: {
-                '/': (context) => ActivityScreen(),
-                // '/': (context) => SplashScreen(),
+                // '/': (context) => ActivityScreen(),
+                '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
                 RouteName.signup: (context) => Signup(),
                 RouteName.signUp2: (context) => SignUp2(),
@@ -174,6 +174,7 @@ class MyApp extends StatelessWidget {
                     ProfileSettingScreen(),
                 RouteName.parentsScreen: (context) => ParentsScreen(),
                 RouteName.categoryDetailList: (context) => CategoryDetailList(),
+                RouteName.activityScreen: (context) => ActivityScreen(),
               });
         },
       ),
