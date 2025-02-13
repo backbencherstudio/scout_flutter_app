@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUP_Screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/account_privacy_screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/notifications_screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/theme_screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/update_password_screen.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/my_details_screen.dart';
 import 'package:scout_app/view/profile_setting_screen/screens/my_interest_screen.dart';
@@ -139,9 +141,13 @@ class ProfileSettingScreen extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              CustomInfoContainer(imagePath: "assets/icons/password.png",title: "Update Password",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/password.png",title: "Update Password",onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>  UpdatePasswordScreen()));
+              },),
               SizedBox(height: 4.h,),
-              CustomInfoContainer(imagePath: "assets/icons/signout.png",title: "Sign Out",onTap: (){},),
+              CustomInfoContainer(imagePath: "assets/icons/signout.png",title: "Sign Out",onTap: (){
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=>  Signup()), (_)=> false);
+              },),
               SizedBox(height:16.h,),
             ],
           ),
