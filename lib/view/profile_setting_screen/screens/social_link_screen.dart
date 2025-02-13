@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scout_app/utils/custom_app_bar.dart';
-import 'package:scout_app/utils/primary_button.dart';
-import 'package:scout_app/view/profile_setting_ui/widgets/social_media_card.dart';
+import 'package:scout_app/widgets/custom_app_bar.dart';
+import 'package:scout_app/view/profile_setting_screen/widgets/social_media_card.dart';
+
+import '../../../widgets/primary_button.dart';
 
 class SocialLinkScreen extends StatelessWidget {
   const SocialLinkScreen({super.key});
@@ -19,13 +20,13 @@ class SocialLinkScreen extends StatelessWidget {
               SizedBox(height: 32.h,),
               SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
+              SocialMediaCard(imagePath: "assets/icons/tiktok.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
+              SocialMediaCard(imagePath: "assets/icons/x.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
+              SocialMediaCard(imagePath: "assets/icons/spotify.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
-              SocialMediaCard(imagePath: "assets/icons/instagram.png" ,title: "@username",onTap: (){}, ),
+              SocialMediaCard(imagePath: "assets/icons/sound_cloud.png" ,title: "@username",onTap: (){}, ),
               SizedBox(height: 24.h,),
               Spacer(),
               PrimaryButton(text: "Save",

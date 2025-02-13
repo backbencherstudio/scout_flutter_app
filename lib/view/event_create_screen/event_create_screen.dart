@@ -1,11 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../utils/custom_dotted_border_input_field.dart';
-import '../../../utils/custom_text_field.dart';
-import '../../../utils/event_info_container.dart';
-import '../../../utils/primary_button.dart';
+import 'package:scout_app/view/event_create_screen/widget/age_restrictions.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_activities.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_extras_screen.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_tags_widget.dart';
+import 'package:scout_app/view/event_create_screen/widget/event_visibility_screen.dart';
+import '../../widgets/custom_dotted_border_input_field.dart';
+import '../profile_setting_screen/screens/event_info_container.dart';
+import '../../widgets/input_decoration.dart';
+import '../../widgets/primary_button.dart';
 
 class EventCreateScreen extends StatelessWidget {
   const EventCreateScreen({super.key});
@@ -13,6 +16,7 @@ class EventCreateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: Text(
           "Event information",
@@ -25,127 +29,245 @@ class EventCreateScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: ListView(
-          children: [
-            SizedBox(
-              height: 20.h,
-            ),
-            CustomDottedBorderInputField(
-              imagePath: 'assets/icons/file_upload.png',
-              label: 'Event artwork (optional)',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            CustomTextField(
-              label: "Event name",
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            CustomTextField(
-              label: "Date",
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            CustomTextField(
-              label: "End date (optional)",
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            Row(
-              children: [
-                Flexible(
-                    child: CustomTextField(
-                      label: "End time",
-                      onTap: () {},
-                    )),
-                SizedBox(
-                  width: 9.w,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20.h,
+              ),
+              CustomDottedBorderInputField(
+                imagePath: 'assets/icons/file_upload.png',
+                label: 'Event artwork (optional)',
+                onTap: () {},
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'Event name',
+                  ),
+                  obscureText: true, // Useful for password fields
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    return null;
+                  },
                 ),
-                Flexible(
-                    child: CustomTextField(
-                      label: "End time",
-                      onTap: () {},
-                    )),
-              ],
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            CustomTextField(label: "Description", onTap: () {}, maxLine: 6),
-            SizedBox(
-              height: 16.h,
-            ),
-            EventInfoContainer(
-              imagePath: '',
-              title: 'Tickets',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            EventInfoContainer(
-              imagePath: '',
-              title: 'Tags',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            EventInfoContainer(
-              imagePath: '',
-              title: 'Event activities',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            EventInfoContainer(
-              imagePath: '',
-              title: 'Age restrictions',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            EventInfoContainer(
-              imagePath: '',
-              title: 'Extras',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            EventInfoContainer(
-              imagePath: '',
-              title: 'Event visibility',
-              onTap: () {},
-            ),
-            SizedBox(
-              height: 48.h,
-            ),
-            PrimaryButton(
-              text: 'Create event',
-              onPressed: () {},
-            ),
-            TextButton(
+              ),
+
+              SizedBox(
+                height: 16.h,
+              ),
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'Event date',
+                  ),
+                  obscureText: true, // Useful for password fields
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Event date';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'End date (optional)',
+                  ),
+                  obscureText: true, // Useful for password fields
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Event date';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+
+              SizedBox(
+                height: 16.h,
+              ),
+              Row(
+                children: [
+                  Flexible(
+                      child:                       SizedBox(
+                        height: 48.h,
+                        child: TextFormField(
+                          decoration: inputDecoration(
+                            context,
+                            hinText: 'Start time',
+                          ),
+                          obscureText: true, // Useful for password fields
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Event date';
+                            }
+                            return null;
+                          },
+                        ),
+                      ),),
+                  SizedBox(
+                    width: 9.w,
+                  ),
+                  Flexible(
+                      child:                        SizedBox(
+                        height: 48.h,
+                        child: TextFormField(
+                          decoration: inputDecoration(
+                            context,
+                            hinText: 'End time',
+                          ),
+                          obscureText: true, // Useful for password fields
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Event date';
+                            }
+                            return null;
+                          },
+                        ),
+                      ),),
+                ],
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              SizedBox(
+                height: 48.h,
+                child: TextFormField(
+                  maxLines: 5, // Allows up to 5 lines of input
+                  decoration: inputDecoration(
+                    context,
+                    hinText: 'Description',
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a description';
+                    }
+                    return null;
+                  },
+                ),
+              )
+              ,
+              SizedBox(
+                height: 16.h,
+              ),
+              EventInfoContainer(
+                imagePath: '',
+                title: 'Tickets',
+                onTap: () {},
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              EventInfoContainer(
+                imagePath: '',
+                title: 'Tags',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventTagsScreen(), // Remove curly braces
+                    ),
+                  );
+          
+                },
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+          
+              EventInfoContainer(
+                imagePath: '',
+                title: 'Event activities',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventActivities(), // Remove curly braces
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              EventInfoContainer(
+                imagePath: '',
+                title: 'Age restrictions',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AgeRestrictions(), // Remove curly braces
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              EventInfoContainer(
+                imagePath: '',
+                title: 'Extras',
+                onTap: () {
+          
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventExtrasScreen(), // Remove curly braces
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              EventInfoContainer(
+                imagePath: '',
+                title: 'Event visibility',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventVisibilityScreen(), // Remove curly braces
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 48.h,
+              ),
+              PrimaryButton(
+                text: 'Create event',
                 onPressed: () {},
-                child: Text(
-                  "Cancel",
-                  style: TextStyle(
-                      color: Color(0xff000000),
-                      fontSize: 16.sp,
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w600),
-                ))
-          ],
+              ),
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Cancel",
+                    style: TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 16.sp,
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.w600),
+                  ))
+            ],
+          ),
         ),
       ),
     );
