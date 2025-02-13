@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view_model/search_screen_provider.dart';
 
 import '../../../widgets/input_decoration.dart';
@@ -54,6 +55,7 @@ class SearchScreen extends StatelessWidget {
              return  GestureDetector(
                onTap: (){
                  debugPrint("\nCategory pressed!\n");
+                 Navigator.pushNamed(context, RouteName.categoryDetailList);
                },
                child: Container(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),

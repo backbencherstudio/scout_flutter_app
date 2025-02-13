@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SocialMediaCard extends StatelessWidget {
-   const SocialMediaCard({
+class SocialMediaTile extends StatelessWidget {
+   const SocialMediaTile({
     super.key, required this.imagePath, required this.title, required this.onTap,
   });
 

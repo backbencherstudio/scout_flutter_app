@@ -19,6 +19,8 @@ class CategoryDetailList extends StatelessWidget {
             fontSize: 28.sp,
           ),
         ),
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context), icon: Icon(Icons.arrow_back_ios, color: Color(0xff111315),)),
       ),
       body: SafeArea(
         child: Padding(

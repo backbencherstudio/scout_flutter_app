@@ -21,6 +21,7 @@ import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
 import 'package:scout_app/view_model/profile_setting_screens_provider/notifications_screen_provider.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/theme_screen_provider.dart';
 import 'package:scout_app/view_model/search_screen_provider.dart';
 
 void main() async {
@@ -58,6 +59,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<NotificationsScreenProvider>(
           create: (_) => NotificationsScreenProvider(),
+        ),
+        ChangeNotifierProvider<ThemeScreenProvider>(
+          create: (_) => ThemeScreenProvider(),
         ),
 
         ChangeNotifierProvider<ParentScreenProvider>(
@@ -159,8 +163,7 @@ class MyApp extends StatelessWidget {
               ),
               debugShowCheckedModeBanner: false,
 
-              //initialRoute: '/',
-              initialRoute:RouteName.categoryDetailList,
+              initialRoute: '/',
               routes: {
                 '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
@@ -173,7 +176,7 @@ class MyApp extends StatelessWidget {
                 RouteName.profileSettingScreen: (context) =>
                     ProfileSettingScreen(),
                 RouteName.parentsScreen: (context) => ParentsScreen(),
-                RouteName.categoryDetailList: (context) => CategoryDetailList()
+                RouteName.categoryDetailList: (context) => CategoryDetailList(),
               });
         },
       ),
