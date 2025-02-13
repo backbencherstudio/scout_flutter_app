@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
-import 'package:scout_app/utils/primary_button.dart';
 import 'package:scout_app/view/profile_setting_screen/widgets/social_media_card.dart';
+
+import '../../../widgets/primary_button.dart';
 
 class SocialLinkScreen extends StatelessWidget {
   const SocialLinkScreen({super.key});
