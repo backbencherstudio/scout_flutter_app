@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:scout_app/utils/route_name.dart';
 import 'package:scout_app/view/Login_Screen/Mybuttons.dart';
-import 'package:scout_app/view/Login_Screen/signUP.dart';
 
 class Glassbox extends StatelessWidget {
   const Glassbox({super.key});
