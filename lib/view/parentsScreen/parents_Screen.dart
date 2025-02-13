@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:scout_app/view_model/parent_screen_provider.dart';
 
 class ParentsScreen extends StatefulWidget {
   const ParentsScreen({super.key});
@@ -11,45 +13,54 @@ class ParentsScreen extends StatefulWidget {
 class _ParentsScreenState extends State<ParentsScreen> {
   @override
   Widget build(BuildContext context) {
+
+    final parentScreenProvider = context.watch<ParentScreenProvider>();
+
     return Scaffold(
-        appBar: AppBar(
-          title: Text("parents Screen"),
+        body: SafeArea(
+            child: IndexedStack(
+              index: parentScreenProvider.selectedIndex,
+              children: parentScreenProvider.parentScreens,
+            )
         ),
-        body: Container(
-          child: Text("bottom navbar"),
-        ),
-        bottomNavigationBar: BottomNavigationBar(items: [
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (index){
+            parentScreenProvider.selectScreen(index);
+          },
+          currentIndex: parentScreenProvider.selectedIndex,
+            items: [
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
-                size: 32,
-                color: Color(0xFF111315),
+              icon: Image.asset(
+                "assets/icons/home_icon.png",
+                width: 32.w,
+                height: 32.h,
+                fit: BoxFit.cover,
               ),
               label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                size: 32,
-                color: Color(0xFF111315),
+              icon: Image.asset(
+                "assets/icons/search.png",
+                width: 24.w,
+                height: 24.h,
+                fit: BoxFit.cover,
               ),
               label: "Search"),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.bookmark_border_sharp,
-                size: 32,
-                color: Color(0xFF111315),
+              icon: Image.asset(
+                "assets/icons/bookmark_icon.png",
+                width: 24.w,
+                height: 24.h,
+                fit: BoxFit.cover,
               ),
               label: "Bookmark"),
           BottomNavigationBarItem(
-            icon: Stack(
-              children: [
-                CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage(
-                    "assets/images/user.png",
-                  ),
-                ),
-              ],
+            icon: ClipOval(
+              child:  Image.asset(
+                "assets/images/user.png",
+                width: 32.w,
+                height: 32.h,
+                fit: BoxFit.cover,
+              ),
             ),
             label: "Profile",
           ),

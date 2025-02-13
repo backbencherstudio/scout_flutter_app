@@ -82,7 +82,7 @@ class _SignUp2State extends State<SignUp2> {
               ),
               Mybuttons(
                   ontap: () {
-                    Navigator.pushNamed(context, RouteName.SignUp3);
+                    Navigator.pushNamed(context, RouteName.signUp3);
                   },
                   text: "Next",
                   color: Color(0xFFFB6012),

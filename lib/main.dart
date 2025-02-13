@@ -4,24 +4,31 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+import 'package:scout_app/view/Login_Screen/screens/SignUpShareIntrest_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/login_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUP_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUPTellUS_Screen.dart';
 import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
-import 'package:scout_app/view/profile_screen/screen/profile_screen.dart';
-import 'package:scout_app/view/search_screen/screen/search_screen.dart';
+import 'package:scout_app/view/parentsScreen/parents_Screen.dart';
+import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
+import 'package:scout_app/view_model/parent_screen_provider.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/notifications_screen_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Set device orientation to portrait
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   // Ensure ScreenUtil is ready
-  // await ScreenUtil.ensureScreenSize();
+  await ScreenUtil.ensureScreenSize();
 
   runApp(
     MyApp(),
@@ -44,6 +51,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<EventDetailsScreenProvider>(
           create: (_) => EventDetailsScreenProvider(),
         ),
+        ChangeNotifierProvider<AccountPrivacyScreenProvider>(
+          create: (_) => AccountPrivacyScreenProvider(),
+        ),
+        ChangeNotifierProvider<NotificationsScreenProvider>(
+          create: (_) => NotificationsScreenProvider(),
+        ),
+
+        ChangeNotifierProvider<ParentScreenProvider>(
+          create: (_) => ParentScreenProvider(),
+        ),
+
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(deviceWidth, deviceHeight),
@@ -51,25 +70,29 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
               theme: ThemeData(
+
                 scaffoldBackgroundColor: Colors.white,
+
                 bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                   backgroundColor: Colors.white,
                   selectedItemColor: Color(0xFFE11E1B),
-                  unselectedItemColor: Colors.grey,
+
+                  unselectedItemColor: Color(0xff111315),
                   showUnselectedLabels: false,
                   showSelectedLabels: false,
                   // Dark background color
                   type: BottomNavigationBarType.fixed,
+
                   selectedLabelStyle: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                    color: Colors.blue,
                   ),
+
                   unselectedLabelStyle: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
-                    color: Colors
-                        .grey, // Explicitly set grey for unselected labels
+                    color: Color(0xff111315) // Explicitly set grey for unselected labels
                   ),
                 ),
 
@@ -129,17 +152,20 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.searchScreen,
+
+              initialRoute: '/',
               routes: {
-               // '/': (context) => SplashScreen(),
-                // RouteName.loginScreen: (context) => LoginScreen(),
-                // RouteName.Signup: (context) => Signup(),
-                // RouteName.SignUp2: (context) => SignUp2(),
-                // RouteName.SignUp3: (context) => SignUp3(),
-                // RouteName.homeScreen: (context) => HomeScreen(),
-                // RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
-                //RouteName.profileScreen: (context) => ProfileScreen(),
-                RouteName.searchScreen: (context) => SearchScreen(),
+                '/': (context) => SplashScreen(),
+                RouteName.loginScreen: (context) => LoginScreen(),
+                RouteName.signup: (context) => Signup(),
+                RouteName.signUp2: (context) => SignUp2(),
+                RouteName.signUp3: (context) => SignUp3(),
+                RouteName.homeScreen: (context) => HomeScreen(),
+                RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
+                RouteName.eventCreateScreen: (context) => EventCreateScreen(),
+                RouteName.profileSettingScreen: (context) =>
+                    ProfileSettingScreen(),
+                RouteName.parentsScreen: (context) => ParentsScreen()
               });
         },
       ),

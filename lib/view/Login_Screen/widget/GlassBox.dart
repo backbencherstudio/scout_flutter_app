@@ -108,7 +108,7 @@ class Glassbox extends StatelessWidget {
               Flexible(
                 child: Mybuttons(
                   ontap: () {
-                    Navigator.pushNamed(context, RouteName.Signup);
+                    Navigator.pushNamed(context, RouteName.signup);
                   },
                   text: "Register",
                   color: Color(0xFFFB6012),
