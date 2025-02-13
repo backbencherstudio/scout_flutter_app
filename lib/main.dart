@@ -140,9 +140,9 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
-              initialRoute: RouteName.profileSettingScreen,
+              initialRoute: '/',
               routes: {
-                '/': (context) => SplashScreen(),
+                '/': (context) => ProfileSettingScreen(), //SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
                 RouteName.Signup: (context) => Signup(),
                 RouteName.SignUp2: (context) => SignUp2(),
