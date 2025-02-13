@@ -24,9 +24,9 @@ void main() async {
 
   // Set device orientation to portrait
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   // Ensure ScreenUtil is ready
-  // await ScreenUtil.ensureScreenSize();
+   await ScreenUtil.ensureScreenSize();
 
   runApp(
     MyApp(),
@@ -140,9 +140,11 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
+
               initialRoute: '/',
+
               routes: {
-                '/': (context) => ProfileSettingScreen(), //SplashScreen(),
+                '/': (context) => SplashScreen(),
                 RouteName.loginScreen: (context) => LoginScreen(),
                 RouteName.Signup: (context) => Signup(),
                 RouteName.SignUp2: (context) => SignUp2(),
