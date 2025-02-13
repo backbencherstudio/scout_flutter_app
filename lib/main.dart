@@ -4,23 +4,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scout_app/utils/route_name.dart';
+import 'package:scout_app/view/Login_Screen/screens/SignUpShareIntrest_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/login_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUP_Screen.dart';
+import 'package:scout_app/view/Login_Screen/screens/signUPTellUS_Screen.dart';
 import 'package:scout_app/view/event_create_screen/event_create_screen.dart';
 
 import 'package:scout_app/view/event_details_screen/event_details_screen.dart';
 import 'package:scout_app/view/home_screen/home_screen.dart';
+
 import 'package:scout_app/view/profile_screen/screen/profile_screen.dart';
+
+import 'package:scout_app/view/profile_setting_screen/screens/profile_setting_screen.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
+
 import 'package:scout_app/view_model/event_details_Screen_provider.dart';
 import 'package:scout_app/view/splash_Screen/Splash_Screen.dart';
 import 'package:scout_app/view_model/homeScreenProvider.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/notifications_screen_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Set device orientation to portrait
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   // Ensure ScreenUtil is ready
-  // await ScreenUtil.ensureScreenSize();
+  await ScreenUtil.ensureScreenSize();
 
   runApp(
     MyApp(),
@@ -42,6 +52,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<EventDetailsScreenProvider>(
           create: (_) => EventDetailsScreenProvider(),
+        ),
+        ChangeNotifierProvider<AccountPrivacyScreenProvider>(
+          create: (_) => AccountPrivacyScreenProvider(),
+        ),
+        ChangeNotifierProvider<NotificationsScreenProvider>(
+          create: (_) => NotificationsScreenProvider(),
         ),
       ],
       child: ScreenUtilInit(
@@ -128,6 +144,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               debugShowCheckedModeBanner: false,
+
               initialRoute: RouteName.profileScreen,
               routes: {
                // '/': (context) => SplashScreen(),
@@ -138,6 +155,7 @@ class MyApp extends StatelessWidget {
                 // RouteName.homeScreen: (context) => HomeScreen(),
                 // RouteName.eventDetailsScreen: (context) => EventDetailsScreen(),
                 RouteName.profileScreen: (context) => ProfileScreen(),
+
               });
         },
       ),

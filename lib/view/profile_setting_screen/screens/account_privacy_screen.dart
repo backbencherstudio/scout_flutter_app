@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:scout_app/view_model/profile_setting_screens_provider/account_privacy_screen%20_provider.dart';
 import 'package:scout_app/widgets/custom_app_bar.dart';
+import 'package:scout_app/widgets/switch_button.dart';
 
-class AccountPrivacyScreen extends StatefulWidget {
+class AccountPrivacyScreen extends StatelessWidget {
    AccountPrivacyScreen({super.key});
-
-  @override
-  State<AccountPrivacyScreen> createState() => _AccountPrivacyScreenState();
-}
-
-class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
-  bool light = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,22 +26,24 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
                     fontWeight: FontWeight.w400
                   ),),
                   Spacer(),
-                  Switch(
-                    activeColor: Colors.green,
-                    inactiveTrackColor: Color(0xFFC6CACD) ,
-                    activeTrackColor: Color(0xFFFB6012) ,
-                    trackOutlineColor: WidgetStateColor.transparent,
-                    thumbColor: const WidgetStatePropertyAll<Color>(Colors.white),
-                    value: light,
-                    onChanged: (bool value) {
-                      setState(() {
-                        light = value;
-                      });
-                    },
+                  Transform.scale(
+                    scale: 0.75,
+                    child: Consumer<AccountPrivacyScreenProvider>(
+                      builder: (context,accountPrivacyProvider,child) {
+                        return SwitchButton(isSwitchOn: accountPrivacyProvider.isPrivateAccountSwitchOn ,onChange: accountPrivacyProvider.togglePrivateAccountSwitch);
+                      }
+                    ),
                   ),
+                  SizedBox(height: 24.h,),
 
                 ],
+              ),
+              Text("When your account is public, others will be able to see your profile, events you have created and ones you have marked as “interested”.",
+              style: Theme.of(context).textTheme.bodySmall,
+              maxLines: 5,
+                softWrap: true,
               )
+
             ]
           ),
         )
@@ -54,3 +51,5 @@ class _AccountPrivacyScreenState extends State<AccountPrivacyScreen> {
     );
   }
 }
+
+
