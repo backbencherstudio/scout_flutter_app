@@ -13,31 +13,51 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         titleSpacing: 0, // Ensures alignment from the left
-        title: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 22.w),
-          child: Row(
-            children: [
-              Text(
-                "Profile",
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
-                ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right : 10.0),
+            child: GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileSettingScreen()));
+              },
+              child: Image.asset(
+                "assets/icons/setting.png",
+                height: 24.h,
+                width: 24.w,
               ),
-              Spacer(),
-              GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileSettingScreen()));
-                },
-                child: Image.asset(
-                  "assets/icons/setting.png",
-                  height: 24.h,
-                  width: 24.w,
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
+        title:
+        // Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: 22.w),
+        //   child: Row(
+        //     children: [
+              Padding(
+                padding: const EdgeInsets.only(left : 10.0),
+                child: Text(
+                  "Profile",
+                  style: Theme.of(context).appBarTheme.titleTextStyle?.copyWith(
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                           //   ),
+                          //     Spacer(),
+                          //     GestureDetector(
+                          //       onTap: (){
+                          //         Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileSettingScreen()));
+                          //       },
+                          //       child: Image.asset(
+                          //         "assets/icons/setting.png",
+                          //         height: 24.h,
+                          //         width: 24.w,
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
+                        ),
+              ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
